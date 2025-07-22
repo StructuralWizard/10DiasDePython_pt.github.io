@@ -1,0 +1,20 @@
+{
+    "exercises": [
+        {
+            "tag_id": 25,
+            "user_input": "ski",
+            "duration_min": 360,
+            "met": 9,
+            "nf_calories": 3780,
+            "photo": {
+                "highres": "https://d2xdmhkmkbyw75.cloudfront.net/exercise/25_highres.jpg",
+                "thumb": "https://d2xdmhkmkbyw75.cloudfront.net/exercise/25_thumb.jpg",
+                "is_user_uploaded": false
+            },
+            "compendium_code": 19090,
+            "name": "cross-country skiing",
+            "description": null,
+            "benefits": null
+        }
+    ]
+}

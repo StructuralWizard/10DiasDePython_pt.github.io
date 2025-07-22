@@ -1,35 +1,73 @@
 ---
 title: Home
 layout: home
+nav_order: 1
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+# 👋 Welcome to **10 Days of Code** Challenge!
 
-More specifically, the created site:
+🌐 **Understand the Web. Master Python. Build with AI.**
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+![play](play.png) Watch it on the Youtube Channel [10 Days of Python with AI] 🎬
 
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
+---
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
+## 🚀 What's This All About?
 
-To get started with creating a site, simply:
+**Feeling lost in your code? Tired of copy-pasting solutions you don’t understand?**  
+You're not alone — and you’ve just landed in the right place.
 
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
+**10 Days of Code** is *not* just another tutorial. It’s a roadmap for curious minds who want to:
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
+- ⚙️ Understand how the **internet** really works  
+- 🐍 Write clean, confident code in **Python**  
+- 🌍 Build modern apps with **web frameworks** like Django and Flask  
+- 🤖 Tap into the power of **Artificial Intelligence** tools and APIs  
+- 🧠 Learn how to **debug, edit, and grow** your projects like a pro  
+
+This is for the **new-vibe coders** — creatives, thinkers, engineers, and explorers — who want to build smart things and have fun doing it.
+
+---
+
+## 🧑‍💻 Who This Is For?
+
+This challenge is perfect if:
+
+- You’ve started coding but feel overwhelmed by everything
+- You want to stop depending on tutorials and start understanding
+- You’re excited about AI but don’t know where to start
+- You learn best by **doing**, not just watching
+
+---
+
+## 💡 What You'll Walk Away With?
+
+- ✅ A working project you can proudly show off  
+- ✅ A solid understanding of Python, web apps, and AI basics  
+- ✅ Confidence to debug, build, and keep learning  
+- ✅ A new way of thinking like a modern developer  
+
+---
+
+## 👇 Ready to Begin?
+
+Head to [**Day 1: Understand your code. Python Adventure: 🧟‍♂️ Monster Maze**] or subscribe to the [10 Days of Python]  and let's get started.
+
+You don't need to be perfect. You just need to start.  
+Let’s code with purpose. Let’s build with soul.
+
+---
+
+**✨ Welcome to the tribe, wizard.**  
+Let’s do this.
+
+> Made with ❤️ by [Structural Wizard] using the [Just the Docs] theme in [Jekyll].
 
 ----
 
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
-
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
 [Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+[10 Days of Python with AI]: https://youtube.com/@10daysofpythonwithai?si=3wobcw1e11B7dlZI
+[Structural Wizard]: https://github.com/StructuralWizard/ 
+[**Day 1: Understand your code. Python Adventure: 🧟‍♂️ Monster Maze**]: https://structuralwizard.github.io/10DaysOfCode.github.io/docs/Day1/

@@ -1,79 +1,102 @@
-# just-the-docs-template
+# 10 Days of Code with AI
 
-This is a *bare-minimum* template to create a [Jekyll] site that:
+This repository contains the course notes and code examples of the course [10 Days of Python with AI]. The course is aimed for curious Vibe coders with no programming background who want to have a wholistic view of coding and ai technologies and the skills to debug, specify and scrutinise code that is mainly produced with AI. 
 
-- uses the [Just the Docs] theme;
-- can be built and published on [GitHub Pages];
-- can be built and previewed locally, and published on other platforms.
+The course is mainly produce to use [Visual Studio Code] and [Github Copilot]; and a big part of it uses python for automatization, API calls, web programming, AI programming and more. 
 
-More specifically, the created site:
+The course notes themselves may be found in [10 Days of Code with AI course notes] and the code examples in [git hub code examples]. Once [Visual Studio Code] and [python] are installed in your machine, you can run the examples by simply typing in your terminal: 
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem;
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages.
+```python
+python <filename>.py
+```
 
-To get started with creating a site, simply:
+## Cloning the Repository
 
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
+If you wish you could install git on your vs code and clone this repository in your local machine.
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](#hosting-your-docs-from-an-existing-project-repo).
+### Installing Bash in Visual Studio Code
 
-After completing the creation of your new site on GitHub, update it as needed:
+If you're on Windows and want to use Bash in VS Code, you can install [Git for Windows](https://git-scm.com/download/win), which includes Git Bash.
 
-## Replace the content of the template pages
+1. Download and install Git for Windows.
+2. After installation, open VS Code.
+3. Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> and type `Terminal: Select Default Profile`.
+4. Choose `Git Bash` from the list.
 
-Update the following files to your own content:
+Now, when you open a new terminal in VS Code, it will use Bash.
 
-- `index.md` (your new home page)
-- `README.md` (information for those who access your site repo on GitHub)
+> **Note:** Installing Git for Windows will also install Git Bash. You do not need to install Git separately—Git Bash is included as part of the Git installation package.
 
-## Changing the version of the theme and/or Jekyll
+### Create a virtual environmenta and activate
+A **virtual environment** in Python is an isolated workspace that allows you to install and manage packages separately from your global Python installation. This means each project can have its own dependencies, versions, and settings without interfering with other projects or the system Python.
 
-Simply edit the relevant line(s) in the `Gemfile`.
+**Why use a virtual environment?**
 
-## Adding a plugin
+- Isolation: Keeps project dependencies separate, avoiding conflicts between packages required by different projects.
+- Reproducibility: Makes it easier to share your project with others, since you can specify exactly which packages and versions are needed.
+Safety: Prevents accidental changes to system-wide Python packages.
 
-The Just the Docs theme automatically includes the [`jekyll-seo-tag`] plugin.
+Typical workflow:
+- Create a virtual environment for your project.
+- Activate it before working.
+- Install packages using pip—these go only into the virtual environment.
+- Deactivate when done.
 
-To add an extra plugin, you need to add it in the `Gemfile` *and* in `_config.yml`. For example, to add [`jekyll-default-layout`]:
+This approach is especially useful in collaborative or production settings, ensuring consistency and minimizing dependency issues.
 
-- Add the following to your site's `Gemfile`:
+To create a Python virtual environment, run the following command in your terminal:
 
-  ```ruby
-  gem "jekyll-default-layout"
+```bash
+python -m venv venv
+```
+
+This will create a new directory called `venv` containing the virtual environment.
+
+To activate the virtual environment:
+
+- On Windows:
+  ```bash
+  .\venv\Scripts\activate
+  ```
+- On macOS/Linux/bash terminal:
+  ```bash
+  source venv/bin/activate
   ```
 
-- And add the following to your site's `_config.yml`:
+Once activated, you can install packages using `pip` and they will be isolated to this environment.
 
-  ```yaml
-  plugins:
-    - jekyll-default-layout
-  ```
+To deactivate the Python virtual environment, simply run:
 
-Note: If you are using a Jekyll version less than 3.5.0, use the `gems` key instead of `plugins`.
+```bash
+deactivate
+```
 
-## Publishing your site on GitHub Pages
+This will return your terminal to the global Python environment.
 
-1.  If your created site is `YOUR-USERNAME/YOUR-SITE-NAME`, update `_config.yml` to:
 
-    ```yaml
-    title: YOUR TITLE
-    description: YOUR DESCRIPTION
-    theme: just-the-docs
+### Clone this repository
 
-    url: https://YOUR-USERNAME.github.io/YOUR-SITE-NAME
+To clone this repository to your local machine, open your terminal and run:
 
-    aux_links: # remove if you don't want this link to appear on your pages
-      Template Repository: https://github.com/YOUR-USERNAME/YOUR-SITE-NAME
-    ```
+```bash
+git clone https://github.com/StructuralWizard/10DaysOfCode.github.io.git
+```
 
-2.  Push your updated `_config.yml` to your site on GitHub.
+This will create a local copy of the repository in your current directory.
 
-3.  In your newly created repo on GitHub:
-    - go to the `Settings` tab -> `Pages` -> `Build and deployment`, then select `Source`: `GitHub Actions`.
-    - if there were any failed Actions, go to the `Actions` tab and click on `Re-run jobs`.
+### Install the dependencies of this repository
+To install the dependencies listed in `requirements.txt`, make sure your virtual environment is activated, then run:
 
-## Building and previewing your site locally
+```bash
+pip install -r requirements.txt
+```
+
+This will install all the required Python packages for the project.
+
+### Run site in local server
+This site has been created using [Just the Docs] theme and the hosted in [GitHub Pages]. You can [Browse our documentation] for more information.
+
+To visualise the github site in the browser rather than editing its markdown you can run `bundle exec jekyll serve` from the main 10DaysOfCode folder where you have the _config.yml file.
 
 Assuming [Jekyll] and [Bundler] are installed on your computer:
 
@@ -85,90 +108,21 @@ Assuming [Jekyll] and [Bundler] are installed on your computer:
 
     The built site is stored in the directory `_site`.
 
-## Publishing your built site on a different platform
 
-Just upload all the files in the directory `_site`.
+Note: If you are using a Jekyll version less than 3.5.0, use the `gems` key instead of `plugins`.
 
-## Customization
 
-You're free to customize sites that you create with this template, however you like!
-
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
-
-## Hosting your docs from an existing project repo
-
-You might want to maintain your docs in an existing project repo. Instead of creating a new repo using the [just-the-docs template](https://github.com/just-the-docs/just-the-docs-template), you can copy the template files into your existing repo and configure the template's Github Actions workflow to build from a `docs` directory. You can clone the template to your local machine or download the `.zip` file to access the files.
-
-### Copy the template files
-
-1.  Create a `.github/workflows` directory at your project root if your repo doesn't already have one. Copy the `pages.yml` file into this directory. GitHub Actions searches this directory for workflow files.
-
-2.  Create a `docs` directory at your project root and copy all remaining template files into this directory.
-
-### Modify the GitHub Actions workflow
-
-The GitHub Actions workflow that builds and deploys your site to Github Pages is defined by the `pages.yml` file. You'll need to edit this file to that so that your build and deploy steps look to your `docs` directory, rather than the project root.
-
-1.  Set the default `working-directory` param for the build job.
-
-    ```yaml
-    build:
-      runs-on: ubuntu-latest
-      defaults:
-        run:
-          working-directory: docs
-    ```
-
-2.  Set the `working-directory` param for the Setup Ruby step.
-
-    ```yaml
-    - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3'
-          bundler-cache: true
-          cache-version: 0
-          working-directory: '${{ github.workspace }}/docs'
-    ```
-
-3.  Set the path param for the Upload artifact step:
-
-    ```yaml
-    - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs/_site/
-    ```
-
-4.  Modify the trigger so that only changes within the `docs` directory start the workflow. Otherwise, every change to your project (even those that don't affect the docs) would trigger a new site build and deploy.
-
-    ```yaml
-    on:
-      push:
-        branches:
-          - "main"
-        paths:
-          - "docs/**"
-    ```
-
-## Licensing and Attribution
-
-This repository is licensed under the [MIT License]. You are generally free to reuse or extend upon this code as you see fit; just include the original copy of the license (which is preserved when you "make a template"). While it's not necessary, we'd love to hear from you if you do use this template, and how we can improve it for future use!
-
-The deployment GitHub Actions workflow is heavily based on GitHub's mixed-party [starter workflows]. A copy of their MIT License is available in [actions/starter-workflows].
 
 ----
 
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
-
+[Visual Studio Code]: https://code.visualstudio.com/
+[Github Copilot]: https://code.visualstudio.com/docs/copilot/overview
+[python]: https://www.python.org/downloads/
 [Jekyll]: https://jekyllrb.com
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
 [GitHub Pages]: https://docs.github.com/en/pages
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
 [Bundler]: https://bundler.io
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
-[`jekyll-default-layout`]: https://github.com/benbalter/jekyll-default-layout
-[`jekyll-seo-tag`]: https://jekyll.github.io/jekyll-seo-tag
-[MIT License]: https://en.wikipedia.org/wiki/MIT_License
-[starter workflows]: https://github.com/actions/starter-workflows/blob/main/pages/jekyll.yml
-[actions/starter-workflows]: https://github.com/actions/starter-workflows/blob/main/LICENSE
+[10 Days of Python with AI]: https://youtube.com/@10daysofpythonwithai?si=3wobcw1e11B7dlZI
+[Structural Wizard]: https://github.com/StructuralWizard/ 
+[10 Days of Code with AI course notes]: https://structuralwizard.github.io/10DaysOfCode.github.io/
+[git hub code examples]: https://github.com/StructuralWizard/10DaysOfCode.github.io/tree/main/_python_code

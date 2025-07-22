@@ -1,0 +1,52 @@
+```mermaid
+graph TD;
+    A(Rectangle);
+```
+
+```mermaid
+graph TD;
+    A{Diamond};
+```
+
+```mermaid
+graph TD;
+    A((Circle));
+```
+
+```mermaid
+graph TD;
+    A[(Database)];
+```
+
+```mermaid
+graph TD;
+    accTitle: monster maze
+    accDescr: flowchart of the monster maze game
+    A((Start)) --> B("print_welcome()");
+    B --> C("main()");
+    C --> D[Enter player name];
+    D --> E("create_player(name)");
+    E --> F("game_loop(player)");
+    F --> G{"found_key?"};
+    G -- Yes --> H["Congratulations! You escaped!"];
+    G -- No --> I("describe_room(player['location'])");
+    I --> J{"item found?"};
+    J -- Yes --> K["Add item to inventory"];
+    J -- No --> L["Continue"];
+    K --> L;
+    L --> M("encounter_monster(player)");
+    M --> N{"Player health <= 0?"};
+    N -- Yes --> O["You have died. Game Over."];
+    N -- No --> P("check_for_key(player)");
+    P --> Q{"Key found?"};
+    Q -- Yes --> R["Add magic key to inventory"];
+    Q -- No --> S["Continue"];
+    R --> S;
+    S --> T{"Loop: Move to another room?"};
+    T -- No --> V["You chose to rest. Game Over."];
+    T -- Yes --> U["move_to_new_room(player)"];
+    U --> F;
+    V --> W(("End"));
+    O --> W;
+    H --> W;
+```
