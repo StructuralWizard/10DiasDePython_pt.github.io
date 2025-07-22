@@ -6,7 +6,7 @@ response = requests.get(url)
 webpage = response.text
 soup = BeautifulSoup(webpage, "html.parser")
 
-# Get all article titles
+# Obtém todos os títulos dos artigos
 titles = soup.select("span.titleline > a")
 for title in titles:
     print(title.getText())

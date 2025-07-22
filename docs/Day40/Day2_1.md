@@ -1,10 +1,10 @@
 ---
-title: Child Page
+title: Página Filha
 layout: default
-parent: Day 2
+parent: Dia 2
 nav_order: 1
 ---
 
-# Child Page Content
+# Conteúdo da Página Filha
 
-This is a child page in the section.
+Esta é uma página filha na seção.

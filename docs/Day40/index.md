@@ -1,11 +1,11 @@
 ---
-title: Day 2
+title: Dia 2
 layout: default
 has_children: yes
 nav_order: 30
 nav_exclude: true
 ---
 
-# My Section
+# Minha Seção
 
-This is a section that contains multiple pages.
+Esta é uma seção que contém várias páginas.

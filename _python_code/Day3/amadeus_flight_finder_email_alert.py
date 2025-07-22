@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 import json
 import csv
 
-# Load environment variables from .env file
+# Carrega as variáveis de ambiente do arquivo .env
 load_dotenv()
 
 
@@ -14,7 +14,7 @@ amadeus = Client(
     client_secret= os.getenv("AMADEUS_API_SECRET")    
 )
 
-# Search for flights
+# Procura por voos
 try:
     response = amadeus.shopping.flight_offers_search.get(
         originLocationCode='LON',
@@ -23,27 +23,27 @@ try:
         adults=1,
         currencyCode='GBP')
     
-    # Save response to a JSON file
+    # Salva a resposta em um arquivo JSON
     with open('flight_offers.json', 'w') as f:
         json.dump(response.data, f, indent=4)
     
-    # Extract flight data for CSV
+    # Extrai os dados do voo para CSV
     csv_data = []
     for offer in response.data:
         price_grand_total = offer['price']['grandTotal']
         
-        # Process each itinerary
+        # Processa cada itinerário
         for itinerary in offer['itineraries']:
-            # For each segment in the itinerary
+            # Para cada segmento no itinerário
             for segment in itinerary['segments']:
-                # Get basic segment info
+                # Obtém informações básicas do segmento
                 dep_iata = segment['departure']['iataCode']
                 dep_time = segment['departure']['at']
                 arr_iata = segment['arrival']['iataCode']
                 arr_time = segment['arrival']['at']
                 carrier_code = segment['carrierCode']
                 
-                # Get baggage info from the first traveler pricing
+                # Obtém informações de bagagem do primeiro preço do viajante
                 baggage_info = {}
                 cabin_bags_qty = None
                 checked_bags_weight = None
@@ -64,7 +64,7 @@ try:
                                 if 'includedCabinBags' in fare_detail and 'quantity' in fare_detail['includedCabinBags']:
                                     cabin_bags_qty = fare_detail['includedCabinBags']['quantity']
                 
-                # Add to CSV data
+                # Adiciona aos dados do CSV
                 csv_data.append({
                     'departure_iatacode': dep_iata,
                     'departure_at': dep_time,
@@ -77,7 +77,7 @@ try:
                     'included_cabinbags_quantity': cabin_bags_qty
                 })
     
-    # Write to CSV
+    # Escreve para CSV
     csv_fields = ['departure_iatacode', 'departure_at', 'arrival_iatacode', 'arrival_at', 
                  'carriercode', 'price_grandtotal', 'included_checkedbags_weight', 
                  'included_checkedbags_weightunit', 'included_cabinbags_quantity']
@@ -86,9 +86,9 @@ try:
         writer.writeheader()
         writer.writerows(csv_data)
     
-    print(f"Flight data extracted and saved to flight_data.csv")
+    print(f"Dados do voo extraídos e salvos em flight_data.csv")
     
-    # Check if any flights are below price threshold
+    # Verifica se algum voo está abaixo do limite de preço
     for offer in response.data:
         price_grand_total = float(offer['price']['grandTotal'])
         if price_grand_total < 150:
@@ -99,11 +99,11 @@ try:
                     connection.sendmail(
                         from_addr=os.getenv("EMAIL_ADDRESS"),
                         to_addrs="toemail@gmail.com",
-                        msg=f"Subject:Cheap Flight Alert!\n\nOnly {price_grand_total}GBP to fly to Santiago de Compostela!\n On the {dep_time} with {offer['itineraries'][0]['segments'][0]['carrierCode']}.\n\n"
+                        msg=f"Subject:Alerta de Voo Barato!\n\nApenas {price_grand_total}GBP para voar para Santiago de Compostela!\n Em {dep_time} com {offer['itineraries'][0]['segments'][0]['carrierCode']}.\n\n"
                     )
-                print(f"Email alert sent for flight priced at £{price_grand_total}")
+                print(f"Alerta de e-mail enviado para voo com preço de £{price_grand_total}")
             except Exception as e:
-                print(f"Failed to send email alert: {e}")
+                print(f"Falha ao enviar o alerta por e-mail: {e}")
     
 except ResponseError as error:
     print(error)

@@ -1,32 +1,32 @@
 class Car:
-    # This is the blueprint for a Car
+    # Este é o projeto para um Carro
 
     def __init__(self, color, brand, num_wheels=4):
-        # This is a special method called the "constructor".
-        # It's like the initial assembly line for a new car.
-        # 'self' refers to the specific car object being created.
-        self.color = color         # Set the color attribute for this car
-        self.brand = brand         # Set the brand attribute for this car
-        self.num_wheels = num_wheels # Set the number of wheels (default to 4)
+        # Este é um método especial chamado "construtor".
+        # É como a linha de montagem inicial para um novo carro.
+        # 'self' se refere ao objeto carro específico que está sendo criado.
+        self.color = color         # Define o atributo de cor para este carro
+        self.brand = brand         # Define o atributo de marca para este carro
+        self.num_wheels = num_wheels # Define o número de rodas (padrão para 4)
 
     def accelerate(self):
-        # This is a method (behavior) for a Car object
-        print(f"The {self.color} {self.brand} car is accelerating!")
+        # Este é um método (comportamento) para um objeto Carro
+        print(f"O carro {self.color} {self.brand} está acelerando!")
 
     def brake(self):
-        # Another method
-        print(f"The {self.color} {self.brand} car is braking.")
+        # Outro método
+        print(f"O carro {self.color} {self.brand} está freando.")
 
-# Creating an object (a specific car) from the Car class
-my_red_car = Car("red", "Toyota")
-johns_blue_car = Car("blue", "Honda")
+# Criando um objeto (um carro específico) a partir da classe Carro
+my_red_car = Car("vermelho", "Toyota")
+johns_blue_car = Car("azul", "Honda")
 my_red_car.accelerate()
 my_red_car.brake()
 
-# Accessing attributes
-print(f"My car's color: {my_red_car.color}")
-print(f"John's car's brand: {johns_blue_car.brand}")
+# Acessando atributos
+print(f"A cor do meu carro: {my_red_car.color}")
+print(f"A marca do carro do João: {johns_blue_car.brand}")
 
-# Setting (modifying) an attribute
-my_red_car.color = "yellow"
-print(f"My car's new color: {my_red_car.color}")
+# Definindo (modificando) um atributo
+my_red_car.color = "amarelo"
+print(f"A nova cor do meu carro: {my_red_car.color}")
