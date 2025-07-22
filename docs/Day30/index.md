@@ -1,5 +1,5 @@
 ---
-title: Day 3
+title: Dia 3
 layout: default
 nav_order: 44
 has_children: true

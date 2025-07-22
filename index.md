@@ -1,73 +1,73 @@
 ---
-title: Home
+title: Início
 layout: home
 nav_order: 1
 ---
 
 
-# 👋 Welcome to **10 Days of Code** Challenge!
+# 👋 Bem-vindo ao Desafio **10 Dias de Código**!
 
-🌐 **Understand the Web. Master Python. Build with AI.**
+🌐 **Entenda a Web. Domine o Python. Construa com IA.**
 
-![play](play.png) Watch it on the Youtube Channel [10 Days of Python with AI] 🎬
-
----
-
-## 🚀 What's This All About?
-
-**Feeling lost in your code? Tired of copy-pasting solutions you don’t understand?**  
-You're not alone — and you’ve just landed in the right place.
-
-**10 Days of Code** is *not* just another tutorial. It’s a roadmap for curious minds who want to:
-
-- ⚙️ Understand how the **internet** really works  
-- 🐍 Write clean, confident code in **Python**  
-- 🌍 Build modern apps with **web frameworks** like Django and Flask  
-- 🤖 Tap into the power of **Artificial Intelligence** tools and APIs  
-- 🧠 Learn how to **debug, edit, and grow** your projects like a pro  
-
-This is for the **new-vibe coders** — creatives, thinkers, engineers, and explorers — who want to build smart things and have fun doing it.
+![play](play.png) Assista no Canal do Youtube [10 Dias de Python com IA] 🎬
 
 ---
 
-## 🧑‍💻 Who This Is For?
+## 🚀 Do que se trata tudo isso?
 
-This challenge is perfect if:
+**Sentindo-se perdido em seu código? Cansado de copiar e colar soluções que você não entende?**
+Você não está sozinho — e acabou de chegar ao lugar certo.
 
-- You’ve started coding but feel overwhelmed by everything
-- You want to stop depending on tutorials and start understanding
-- You’re excited about AI but don’t know where to start
-- You learn best by **doing**, not just watching
+**10 Dias de Código** *não* é apenas mais um tutorial. É um roteiro para mentes curiosas que querem:
 
----
+- ⚙️ Entender como a **internet** realmente funciona
+- 🐍 Escrever código limpo e confiante em **Python**
+- 🌍 Construir aplicativos modernos com **frameworks web** como Django e Flask
+- 🤖 Aproveitar o poder das ferramentas e APIs de **Inteligência Artificial**
+- 🧠 Aprender a **depurar, editar e desenvolver** seus projetos como um profissional
 
-## 💡 What You'll Walk Away With?
-
-- ✅ A working project you can proudly show off  
-- ✅ A solid understanding of Python, web apps, and AI basics  
-- ✅ Confidence to debug, build, and keep learning  
-- ✅ A new way of thinking like a modern developer  
+Isso é para os **codificadores da nova vibe** — criativos, pensadores, engenheiros e exploradores — que querem construir coisas inteligentes e se divertir fazendo isso.
 
 ---
 
-## 👇 Ready to Begin?
+## 🧑‍💻 Para Quem é Isso?
 
-Head to [**Day 1: Understand your code. Python Adventure: 🧟‍♂️ Monster Maze**] or subscribe to the [10 Days of Python]  and let's get started.
+Este desafio é perfeito se:
 
-You don't need to be perfect. You just need to start.  
-Let’s code with purpose. Let’s build with soul.
+- Você começou a codificar, mas se sente sobrecarregado com tudo
+- Você quer parar de depender de tutoriais e começar a entender
+- Você está animado com a IA, mas não sabe por onde começar
+- Você aprende melhor **fazendo**, não apenas assistindo
 
 ---
 
-**✨ Welcome to the tribe, wizard.**  
-Let’s do this.
+## 💡 Com o que você sairá?
 
-> Made with ❤️ by [Structural Wizard] using the [Just the Docs] theme in [Jekyll].
+- ✅ Um projeto funcional que você pode exibir com orgulho
+- ✅ Uma sólida compreensão de Python, aplicativos da web e noções básicas de IA
+- ✅ Confiança para depurar, construir e continuar aprendendo
+- ✅ Uma nova maneira de pensar como um desenvolvedor moderno
+
+---
+
+## 👇 Pronto para começar?
+
+Vá para o [**Dia 1: Entenda seu código. Aventura Python: 🧟‍♂️ Labirinto de Monstros**] ou inscreva-se nos [10 Dias de Python] e vamos começar.
+
+Você não precisa ser perfeito. Você só precisa começar.
+Vamos codificar com propósito. Vamos construir com alma.
+
+---
+
+**✨ Bem-vindo à tribo, mago.**
+Vamos fazer isso.
+
+> Feito com ❤️ por [Structural Wizard] usando o tema [Just the Docs] em [Jekyll].
 
 ----
 
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
 [Jekyll]: https://jekyllrb.com
-[10 Days of Python with AI]: https://youtube.com/@10daysofpythonwithai?si=3wobcw1e11B7dlZI
-[Structural Wizard]: https://github.com/StructuralWizard/ 
-[**Day 1: Understand your code. Python Adventure: 🧟‍♂️ Monster Maze**]: https://structuralwizard.github.io/10DaysOfCode.github.io/docs/Day1/
+[10 Dias de Python com IA]: https://youtube.com/@10daysofpythonwithai?si=3wobcw1e11B7dlZI
+[Structural Wizard]: https://github.com/StructuralWizard/
+[**Dia 1: Entenda seu código. Aventura Python: 🧟‍♂️ Labirinto de Monstros**]: https://structuralwizard.github.io/10DaysOfCode.github.io/docs/Day1/

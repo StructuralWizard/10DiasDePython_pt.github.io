@@ -1,22 +1,22 @@
 import requests
 
-# GitHub API endpoint to get user repositories
+# Endpoint da API do GitHub para obter repositórios de um usuário
 url = "https://api.github.com/users/octocat/repos"
 
-# Custom headers
+# Cabeçalhos personalizados
 headers = {
     "User-Agent": "MyPythonApp/1.0",
     "Accept": "application/vnd.github.v3+json"
 }
 
-# Make the GET request
+# Faz a requisição GET
 response = requests.get(url, headers=headers)
 
-# Check if request was successful
+# Verifica se a requisição foi bem-sucedida
 if response.status_code == 200:
     data = response.json()
-    # Print first 3 repositories with name and URL
+    # Imprime os 3 primeiros repositórios com nome e URL
     for repo in data[:3]:
-        print(f"Name: {repo['name']} - URL: {repo['html_url']}")
+        print(f"Nome: {repo['name']} - URL: {repo['html_url']}")
 else:
-    print("Request failed with status code:", response.status_code)
+    print("A requisição falhou com o código de status:", response.status_code)

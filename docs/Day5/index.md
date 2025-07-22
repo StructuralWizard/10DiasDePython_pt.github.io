@@ -1,21 +1,21 @@
 ---
-title: Day 5 Web Scraping with Beautiful Soup & Selenium
+title: Dia 5 Web Scraping com Beautiful Soup e Selenium
 layout: default
 nav_order: 6
 has_children: false
 nav_exclude: false
 ---
 
-# Day 5. Web Scraping. 🕷️ Beautiful Soup & Selenium 
+# Dia 5. Web Scraping. 🕷️ Beautiful Soup e Selenium
 {: .no_toc }
 
-Welcome to Day 5! Today, you’ll learn how to extract data from websites using Python. We’ll start with Beautiful Soup for static pages, then level up to Selenium for dynamic, interactive sites. By the end, you’ll be able to collect data from the web for your own projects!
+Bem-vindo ao Dia 5! Hoje, você aprenderá a extrair dados de sites usando Python. Começaremos com o Beautiful Soup para páginas estáticas e, em seguida, avançaremos para o Selenium para sites dinâmicos e interativos. Ao final, você será capaz de coletar dados da web para seus próprios projetos!
 
 ---
 
 <details open markdown="block">
   <summary>
-    Table of contents
+    Índice
   </summary>
   {: .text-delta }
 1. TOC
@@ -24,65 +24,65 @@ Welcome to Day 5! Today, you’ll learn how to extract data from websites using 
 
 ---
 
-## 🌱 What is Web Scraping?
-Web scraping is the process of automatically collecting information from websites. It’s useful for gathering data that isn’t available via an API.
+## 🌱 O que é Web Scraping?
+Web scraping é o processo de coletar informações de sites automaticamente. É útil para coletar dados que não estão disponíveis por meio de uma API.
 
-- **Beautiful Soup**: Parses HTML and XML documents. Great for static pages.
-- **Selenium**: Automates browsers. Useful for dynamic sites that require interaction (clicks, typing, etc).
-
----
-
-## 🥣 Beautiful Soup Basics <a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
-For parsing and navigating HTML/XML with Python
-Requires: beautifulsoup4 and a parser like lxml or Python's built-in html.parser.
-
-### 🧩 What can you do with Beautiful soup?
-Here's a breakdown of its core capabilities:
-
-* **Parse HTML and XML:** Beautiful Soup takes raw HTML or XML content and transforms it into a navigable "parse tree" made of Python objects. This tree makes it simple to access and manipulate specific parts of the document.
-
-* **Navigate the Parse Tree:** You can easily move through the HTML/XML structure:
-    * **By tag name:** Find elements like `<div>`, `<a>`, or `<p>`.
-    * **By attributes:** Locate elements based on their `id`, `class`, `href`, or any other attribute.
-    * **By text content:** Search for specific words or phrases within elements.
-    * **Using relationships:** Travel up (parent), down (children, descendants), or sideways (siblings) in the tree.
-
-* **Search for Specific Elements:** Beautiful Soup offers strong methods like `find()` (to get the first match) and `find_all()` (to get all matches) to pinpoint the exact data you're looking for. You can combine these with various filters (tag names, attributes, CSS selectors, regular expressions, or even custom functions) for precise selection.
-
-* **Extract Data:** Once you've found the elements you want, you can easily pull out:
-    * **Text content:** Get the visible text inside a tag (e.g., `soup.title.string`).
-    * **Attribute values:** Access the values of attributes like `href` from an `<a>` tag or `src` from an `<img>` tag.
-
-* **Handle Malformed HTML:** One of Beautiful Soup's strengths is its ability to deal with "tag soup"—poorly structured or incomplete HTML. It tries to make sense of it and build a usable parse tree.
-
-* **Integrate with Other Libraries:**
-    * **Requests:** Often used with the `requests` library to fetch the HTML content from a URL before Beautiful Soup parses it.
-    * **Selenium:** For dynamic websites that rely heavily on JavaScript for rendering, you might use Selenium (a browser automation tool) to load the page, and then pass the rendered HTML to Beautiful Soup for parsing.
-    * **Pandas:** Extracted data can be easily structured and stored in Pandas DataFrames for further analysis or export to formats like CSV or Excel.
+- **Beautiful Soup**: Analisa documentos HTML e XML. Ótimo para páginas estáticas.
+- **Selenium**: Automatiza navegadores. Útil para sites dinâmicos que exigem interação (cliques, digitação, etc.).
 
 ---
 
-### 🧰 Common Uses for Beautiful Soup
+## 🥣 Noções Básicas do Beautiful Soup <a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+Para analisar e navegar em HTML/XML com Python
+Requer: `beautifulsoup4` e um analisador como `lxml` ou o `html.parser` embutido do Python.
 
-Beautiful Soup is primarily used for:
+### 🧩 O que você pode fazer com o Beautiful Soup?
+Aqui está um resumo de suas principais capacidades:
 
-* **Web Scraping:** This is its main purpose. You can use it to:
-    * Collect product information (names, prices, descriptions) from e-commerce sites.
-    * Extract news articles, blog posts, or research papers.
-    * Gather job listings or real estate data.
-    * Perform sentiment analysis by scraping reviews or comments.
-* **Data Mining:** Turning unstructured web data into organized datasets for analysis.
-* **Content Aggregation:** Building tools that pull content from multiple online sources into one centralized location.
+* **Analisar HTML e XML:** O Beautiful Soup pega o conteúdo HTML ou XML bruto e o transforma em uma "árvore de análise" navegável, composta por objetos Python. Essa árvore torna simples o acesso e a manipulação de partes específicas do documento.
 
-In short, Beautiful Soup empowers Python developers to programmatically interact with web content, making it an essential tool for anyone looking to extract and work with data from the internet.
+* **Navegar na Árvore de Análise:** Você pode se mover facilmente pela estrutura HTML/XML:
+    * **Por nome da tag:** Encontre elementos como `<div>`, `<a>` ou `<p>`.
+    * **Por atributos:** Localize elementos com base em seu `id`, `class`, `href` ou qualquer outro atributo.
+    * **Por conteúdo de texto:** Pesquise por palavras ou frases específicas dentro dos elementos.
+    * **Usando relacionamentos:** Navegue para cima (pai), para baixo (filhos, descendentes) ou para os lados (irmãos) na árvore.
 
-### 📦 Install the required packages
+* **Pesquisar por Elementos Específicos:** O Beautiful Soup oferece métodos poderosos como `find()` (para obter a primeira correspondência) e `find_all()` (para obter todas as correspondências) para identificar os dados exatos que você está procurando. Você pode combinar isso com vários filtros (nomes de tags, atributos, seletores CSS, expressões regulares ou até mesmo funções personalizadas) para uma seleção precisa.
+
+* **Extrair Dados:** Depois de encontrar os elementos que deseja, você pode extrair facilmente:
+    * **Conteúdo de texto:** Obtenha o texto visível dentro de uma tag (por exemplo, `soup.title.string`).
+    * **Valores de atributos:** Acesse os valores de atributos como `href` de uma tag `<a>` ou `src` de uma tag `<img>`.
+
+* **Lidar com HTML Malformado:** Uma das forças do Beautiful Soup é sua capacidade de lidar com "sopa de tags"—HTML mal estruturado ou incompleto. Ele tenta fazer sentido e construir uma árvore de análise utilizável.
+
+* **Integrar com Outras Bibliotecas:**
+    * **Requests:** Frequentemente usado com a biblioteca `requests` para buscar o conteúdo HTML de uma URL antes que o Beautiful Soup o analise.
+    * **Selenium:** Para sites dinâmicos que dependem muito de JavaScript para renderização, você pode usar o Selenium (uma ferramenta de automação de navegador) para carregar a página e, em seguida, passar o HTML renderizado para o Beautiful Soup para análise.
+    * **Pandas:** Os dados extraídos podem ser facilmente estruturados e armazenados em DataFrames do Pandas para análise posterior ou exportação para formatos como CSV ou Excel.
+
+---
+
+### 🧰 Usos Comuns do Beautiful Soup
+
+O Beautiful Soup é usado principalmente para:
+
+* **Web Scraping:** Este é seu principal propósito. Você pode usá-lo para:
+    * Coletar informações de produtos (nomes, preços, descrições) de sites de comércio eletrônico.
+    * Extrair artigos de notícias, postagens de blog ou artigos de pesquisa.
+    * Coletar listas de empregos ou dados imobiliários.
+    * Realizar análise de sentimento raspando avaliações ou comentários.
+* **Mineração de Dados:** Transformar dados da web não estruturados em conjuntos de dados organizados para análise.
+* **Agregação de Conteúdo:** Construir ferramentas que extraem conteúdo de várias fontes online para um local centralizado.
+
+Em resumo, o Beautiful Soup capacita os desenvolvedores Python a interagir programaticamente com o conteúdo da web, tornando-o uma ferramenta essencial para quem deseja extrair e trabalhar com dados da internet.
+
+### 📦 Instale os pacotes necessários
 ```bash
 pip install beautifulsoup4 requests lxml
 ```
 
-### 📄 Example: Scraping a Local HTML File
-Suppose you have a file called `website.html`:
+### 📄 Exemplo: Raspando um Arquivo HTML Local
+Suponha que você tenha um arquivo chamado `website.html`:
 
 ```python
 from bs4 import BeautifulSoup
@@ -94,84 +94,84 @@ soup = BeautifulSoup(contents, "html.parser")
 print(soup.title)
 ```
 
-### 🧼 Cleaning HTML
+### 🧼 Limpando HTML
 ```python
 clean_text = soup.get_text(strip=True)
 ```
 
-### 🔍 Finding Elements
-You can search for tags, classes, ids, and more:
+### 🔍 Encontrando Elementos
+Você pode procurar por tags, classes, ids e muito mais:
 
 ```python
-# Find the first <a> tag
+# Encontra a primeira tag <a>
 anchor = soup.find("a")
 print(anchor)
 
-# Find all <a> tags
+# Encontra todas as tags <a>
 all_anchors = soup.find_all("a")
 for tag in all_anchors:
-    # .getText() gets the visible text inside the tag
+    # .getText() obtém o texto visível dentro da tag
     print(tag.getText())
-    # .get() retrieves the value of an attribute (e.g., href)
+    # .get() recupera o valor de um atributo (por exemplo, href)
     print(tag.get("href"))
 ```
 
-#### Search by attributes (id, class, etc.)
+#### Pesquisar por atributos (id, classe, etc.)
 ```python
-# Find by id
+# Encontrar por id
 heading = soup.find(name="h1", id="name")
 
-# Find by class (note: use class_ because 'class' is a reserved word)
+# Encontrar por classe (nota: use class_ porque 'class' é uma palavra reservada)
 section = soup.find(name="h3", class_="heading")
 
-# Find all elements with a specific class
+# Encontrar todos os elementos com uma classe específica
 items = soup.find_all(class_="item")
 ```
 
-#### Search using CSS selectors
+#### Pesquisar usando seletores CSS
 ```python
-# Use .select() for CSS selectors
-links = soup.select("a.storylink")  # All <a> tags with class 'storylink'
-ids = soup.select("#main")          # Element with id 'main'
-classes = soup.select(".heading")   # All elements with class 'heading'
+# Use .select() para seletores CSS
+links = soup.select("a.storylink")  # Todas as tags <a> com a classe 'storylink'
+ids = soup.select("#main")          # Elemento com o id 'main'
+classes = soup.select(".heading")   # Todos os elementos com a classe 'heading'
 ```
 
-### 🌳 Navigating the Tree
+### 🌳 Navegando na Árvore
 ```python
-tag.name         # Tag name
-tag.attrs        # Tag attributes as dict
-tag['href']      # Specific attribute
+tag.name         # Nome da tag
+tag.attrs        # Atributos da tag como dict
+tag['href']      # Atributo específico
 
-tag.text         # All text inside tag (recursive)
-tag.string       # Direct string only
+tag.text         # Todo o texto dentro da tag (recursivo)
+tag.string       # Apenas a string direta
 tag.parent
-tag.children      # Generator of children
-tag.contents      # List of children
+tag.children      # Gerador de filhos
+tag.contents      # Lista de filhos
 tag.next_sibling
 tag.previous_sibling
 
 ```
 
 
-### 🔗 Navigating and Following Links
-You can extract and follow links by combining `.get("href")` with requests:
+### 🔗 Navegando e Seguindo Links
+Você pode extrair e seguir links combinando `.get("href")` com `requests`:
 
 ```python
 for tag in soup.find_all("a"):
     link = tag.get("href")
     if link and link.startswith("http"):
-        print("Following:", link)
-        # You can fetch the linked page with requests.get(link)
+        print("Seguindo:", link)
+        # Você pode buscar a página vinculada com requests.get(link)
 ```
 
-For further reference follow to the <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank">documentation</a>
+Para mais referências, consulte a <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank">documentação</a>.
 
 
 ---
 
-## 🌐 Scraping Live Websites <a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+## 🌐 Raspando Sites ao Vivo <a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
 
-To scrape a live website, use the `requests` library to fetch the page:
+Para raspar um site ao vivo, use a biblioteca `requests` para buscar a página:
 
 ```python
 import requests
@@ -182,7 +182,7 @@ response = requests.get(url)
 webpage = response.text
 soup = BeautifulSoup(webpage, "html.parser")
 
-# Get all article titles
+# Obtém todos os títulos dos artigos
 titles = soup.find_all("a", class_="storylink")
 for title in titles:
     print(title.getText())
@@ -190,102 +190,102 @@ for title in titles:
 
 ---
 
-## ⚖️ Is Web Scraping Legal? <a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+## ⚖️ Web Scraping é Legal? <a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
 
-- Only scrape public data.
-- Respect robots.txt and website terms.
-- Don’t overload servers (add delays if scraping many pages).
-- Use scraped data responsibly.
+- Raspe apenas dados públicos.
+- Respeite o `robots.txt` e os termos do site.
+- Não sobrecarregue os servidores (adicione atrasos se estiver raspando muitas páginas).
+- Use os dados raspados de forma responsável.
 
 ---
 
-## 🤖 Selenium for Dynamic Websites <a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+## 🤖 Selenium para Sites Dinâmicos <a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
 
-Some sites load content with JavaScript or require interaction. Selenium lets you control a real browser to handle these cases. 
+Alguns sites carregam conteúdo com JavaScript ou exigem interação. O Selenium permite que você controle um navegador real para lidar com esses casos.
 
-Unlike Beautiful Soup, which is limited to scraping data, Selenium allows for interaction with web pages, such as typing, clicking, and scrolling.  It enables the automation of continuous actions and entire workflows of a particular job or task.  It effectively drives a browser to perform actions like a human user. 
+Ao contrário do Beautiful Soup, que se limita a raspar dados, o Selenium permite a interação com páginas da web, como digitar, clicar e rolar. Ele permite a automação de ações contínuas e fluxos de trabalho inteiros de uma determinada tarefa ou trabalho. Ele efetivamente controla um navegador para realizar ações como um usuário humano.
 
-Selenium can automate almost anything a human can do on a website, like filling forms, transferring information, or playing web-based games.
+O Selenium pode automatizar quase tudo que um humano pode fazer em um site, como preencher formulários, transferir informações ou jogar jogos baseados na web.
 
-### 🚗 Introduction to Selenium WebDriver
+### 🚗 Introdução ao Selenium WebDriver
 
-* **What it is:** Selenium WebDriver is a well-known automation and testing tool for web developers.
-* **Why use it (over Beautiful Soup):** Unlike Beautiful Soup, which is limited to scraping data, Selenium allows for interaction with web pages, such as typing, clicking, and scrolling. It enables the automation of continuous actions and entire workflows of a particular job or task. It effectively drives a browser to perform actions like a human user.
-* **Capabilities:** Selenium can automate almost anything a human can do on a website, like filling forms, transferring information, or playing web-based games.
+* **O que é:** O Selenium WebDriver é uma ferramenta de automação e teste bem conhecida para desenvolvedores da web.
+* **Por que usá-lo (em vez do Beautiful Soup):** Ao contrário do Beautiful Soup, que se limita a raspar dados, o Selenium permite a interação com páginas da web, como digitar, clicar e rolar. Ele permite a automação de ações contínuas e fluxos de trabalho inteiros de uma determinada tarefa ou trabalho. Ele efetivamente controla um navegador para realizar ações como um usuário humano.
+* **Capacidades:** O Selenium pode automatizar quase tudo que um humano pode fazer em um site, como preencher formulários, transferir informações ou jogar jogos baseados na web.
 
-### 🔧 Installation and Setup of Selenium
+### 🔧 Instalação e Configuração do Selenium
 
-1.  **Install Chrome Browser:** While Selenium works with other browsers like Firefox or Safari, Chrome is recommended for consistency and use of Chrome Developer Tools. Download the Chrome driver from [chromedriver.chromium.org](https://chromedriver.chromium.org/downloads) and place it in your PATH.
-2.  **Install Selenium Package:**
-    * Import `selenium` in your Python file (e.g., `main.py`).
-    * Install the package using the provided light bulb option in your IDE.
+1.  **Instale o Navegador Chrome:** Embora o Selenium funcione com outros navegadores como Firefox ou Safari, o Chrome é recomendado para consistência e uso das Ferramentas de Desenvolvedor do Chrome. Baixe o driver do Chrome em [chromedriver.chromium.org](https://chromedriver.chromium.org/downloads) e coloque-o em seu PATH.
+2.  **Instale o Pacote Selenium:**
+    * Importe `selenium` em seu arquivo Python (por exemplo, `main.py`).
+    * Instale o pacote usando a opção de lâmpada fornecida em seu IDE.
 ```bash
 pip install selenium
 ```
-3.  **Import WebDriver Module:** Change the import statement to `from selenium import webdriver`.
-4.  **Create a Driver Instance:** Initialize a Chrome driver object: `driver = webdriver.Chrome()`.
-    * **Chromedriver:** This acts as a bridge between the Selenium code and the Chrome browser, telling Selenium how to interact with the browser. Different drivers exist for different browsers (e.g., Safari, Firefox).
-5.  **Browser Control:**
-    * `driver.close()`: Closes the active tab.
-    * `driver.quit()`: Quits the entire browser. It's preferred to use `quit()` after completing tasks to ensure a fresh browser instance for future runs.
+3.  **Importe o Módulo WebDriver:** Altere a declaração de importação para `from selenium import webdriver`.
+4.  **Crie uma Instância do Driver:** Inicialize um objeto de driver do Chrome: `driver = webdriver.Chrome()`.
+    * **Chromedriver:** Ele atua como uma ponte entre o código Selenium и o navegador Chrome, dizendo ao Selenium como interagir com o navegador. Existem diferentes drivers para diferentes navegadores (por exemplo, Safari, Firefox).
+5.  **Controle do Navegador:**
+    * `driver.close()`: Fecha a aba ativa.
+    * `driver.quit()`: Encerra o navegador inteiro. É preferível usar `quit()` após concluir as tarefas para garantir uma nova instância do navegador para futuras execuções.
 
-### 🔎 Example: Open a Page and Find an Element
+### 🔎 Exemplo: Abrir uma Página e Encontrar um Elemento
 ```python
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time as time_module
 
-# Start the browser
+# Inicia o navegador
 browser = webdriver.Chrome()
 browser.get("https://www.python.org")
 
-# Find elements
+# Encontra elementos
 event_times = browser.find_elements(By.CSS_SELECTOR, ".event-widget time")
 event_names = browser.find_elements(By.CSS_SELECTOR, ".event-widget li a")
 
 for time, name in zip(event_times, event_names):
     print(time.text, name.text)
 
-# Wait for 3 seconds before closing
+# Espera 3 segundos antes de fechar
 time_module.sleep(3)
 
 browser.quit()
 ```
 
-### 🔍 Finding and Selecting Elements on a Website
+### 🔍 Encontrando e Selecionando Elementos em um Site
 
-**Locating Elements:** 
+**Localizando Elementos:**
 
-Selenium offers various strategies to find HTML elements on a webpage. Once you have identified an element with the inspect tool of the browser, you can copy its Xpath or other and usit as identifier with:
+O Selenium oferece várias estratégias para encontrar elementos HTML em uma página da web. Depois de identificar um elemento com a ferramenta de inspeção do navegador, você pode copiar seu XPath ou outro identificador e usá-lo com:
 
-* **`find_element()` method:** Used to find a single element.
-* **`By` Class:** Important for specifying the location strategy (e.g., `By.CLASS_NAME`, `By.ID`, `By.NAME`, `By.LINK_TEXT`).
-* **Examples:**
-    * **By Class Name:** To get the price of an item on Amazon, you might find elements with classes like "a-price-whole" (for dollars) and "a-price-fraction" (for cents).
-    * **Accessing Text Content:** After finding an element, use `.text` to retrieve the text content within that HTML element.
-    * **By Name:** Useful for form input fields.
-    * **By Link Text:** Specifically for clicking on links by their visible text.
-* **`find_elements()` method:** For every `find_element()` method, there's a `find_elements()` counterpart that returns a list of all matching elements.
-* **Inspecting Elements:** Use Chrome Developer Tools (right-click -> Inspect) to examine the HTML structure and identify IDs, class names, or other attributes for elements.
+* **Método `find_element()`:** Usado para encontrar um único elemento.
+* **Classe `By`:** Importante para especificar a estratégia de localização (por exemplo, `By.CLASS_NAME`, `By.ID`, `By.NAME`, `By.LINK_TEXT`).
+* **Exemplos:**
+    * **Por Nome da Classe:** Para obter o preço de um item na Amazon, você pode encontrar elementos com classes como "a-price-whole" (para dólares) e "a-price-fraction" (para centavos).
+    * **Acessando o Conteúdo de Texto:** Depois de encontrar um elemento, use `.text` para recuperar o conteúdo de texto dentro desse elemento HTML.
+    * **Por Nome:** Útil para campos de entrada de formulário.
+    * **Por Texto do Link:** Especificamente para clicar em links pelo texto visível.
+* **Método `find_elements()`:** Para cada método `find_element()`, existe um `find_elements()` correspondente que retorna uma lista de todos os elementos correspondentes.
+* **Inspecionando Elementos:** Use as Ferramentas de Desenvolvedor do Chrome (botão direito -> Inspecionar) para examinar a estrutura HTML e identificar IDs, nomes de classes ou outros atributos para elementos.
 
-### 🖱️ Automating Interactions (Typing and Clicking)
+### 🖱️ Automatizando Interações (Digitação e Cliques)
 
-* **Clicking Elements:**
-    * After identifying an element, use the `.click()` method on the element object.
-    * Selenium can click on links based on their `LINK_TEXT`.
-* **Typing into Input Fields:**
-    * First, find the input field element.
-    * Use the `.send_keys()` method on the element object, passing the string you want to type.
-* **Sending Special Keys:** To send keys like `Enter` or `Return`, import the `Keys` class from `selenium.webdriver.common.keys`.
+* **Clicando em Elementos:**
+    * Depois de identificar um elemento, use o método `.click()` no objeto do elemento.
+    * O Selenium pode clicar em links com base em seu `LINK_TEXT`.
+* **Digitando em Campos de Entrada:**
+    * Primeiro, encontre o elemento do campo de entrada.
+    * Use o método `.send_keys()` no objeto do elemento, passando a string que você deseja digitar.
+* **Enviando Teclas Especiais:** Para enviar teclas como `Enter` ou `Return`, importe a classe `Keys` de `selenium.webdriver.common.keys`.
 
 
 ---
 
-## 📝 Challenge: Scrape Upcoming Python Events <a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+## 📝 Desafio: Raspar os Próximos Eventos do Python <a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
 
-- Use Selenium to open [python.org](https://www.python.org/)
-- Extract the date and name of the next 5 events
-- Store them in a dictionary like:
+- Use o Selenium para abrir [python.org](https://www.python.org/)
+- Extraia a data e o nome dos próximos 5 eventos
+- Armazene-os em um dicionário como:
 
 ```python
 events = {
@@ -297,10 +297,10 @@ events = {
 
 ---
 
-## 🚀 Summary <a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+## 🚀 Resumo <a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
 
-- Use Beautiful Soup for static HTML scraping
-- Use Selenium for dynamic, interactive sites
-- Always respect website rules and ethics
+- Use o Beautiful Soup para raspagem de HTML estático
+- Use o Selenium para sites dinâmicos e interativos
+- Sempre respeite as regras e a ética do site
 
-You now have the tools to collect data from almost any website. Happy scraping!
+Agora você tem as ferramentas para coletar dados de quase qualquer site. Boa raspagem!
