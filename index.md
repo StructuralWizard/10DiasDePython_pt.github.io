@@ -52,7 +52,7 @@ Este desafio é perfeito se:
 
 ## 👇 Pronto para começar?
 
-Vá para o [**Dia 1: Entenda seu código. Aventura Python: 🧟‍♂️ Labirinto de Monstros**] ou inscreva-se nos [10 Dias de Python] e vamos começar.
+Vá para o [**Dia 1: Entenda seu código. Aventura Python: 🧟‍♂️ Labirinto de Monstros**] ou inscreva-se nos [10 Dias de Python com IA] e vamos começar.
 
 Você não precisa ser perfeito. Você só precisa começar.
 Vamos codificar com propósito. Vamos construir com alma.
@@ -68,6 +68,6 @@ Vamos fazer isso.
 
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
 [Jekyll]: https://jekyllrb.com
-[10 Dias de Python com IA]: https://youtube.com/@10daysofpythonwithai?si=3wobcw1e11B7dlZI
+[10 Dias de Python com IA]: https://youtube.com/@10diasdepythoncomia?si=xGA44ST0Adad9umr
 [Structural Wizard]: https://github.com/StructuralWizard/
-[**Dia 1: Entenda seu código. Aventura Python: 🧟‍♂️ Labirinto de Monstros**]: https://structuralwizard.github.io/10DaysOfCode.github.io/docs/Day1/
+[**Dia 1: Entenda seu código. Aventura Python: 🧟‍♂️ Labirinto de Monstros**]: https://structuralwizard.github.io/10DiasDePython_pt.github.io/docs/Day1/
