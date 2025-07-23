@@ -997,47 +997,46 @@ Você pode usar F12 ou clicar com o botão direito e inspecionar para ver o cód
 
 ---
 
-## 🎨 CSS: Styling the Web<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+## 🎨 CSS: Estilizando a Web<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
 
-### Why Do We Need CSS?<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+### Por que precisamos de CSS?<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
 
-- **CSS (Cascading Style Sheets)** controls the appearance of HTML elements. It separates content (HTML) from presentation (CSS).
+- **CSS (Folhas de Estilo em Cascata)** controla a aparência dos elementos HTML. Ele separa o conteúdo (HTML) da apresentação (CSS).
 
-### Adding CSS<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+### Adicionando CSS<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
 
 **Inline:**
 ```html
-<p style="color: red;">Red text</p>
+<p style="color: red;">Texto vermelho</p>
 ```
-**Internal:**
-When you set a list of styles in the html file to apply to all elements.
+**Interno:**
+Quando você define uma lista de estilos no arquivo html para aplicar a todos os elementos.
 
 ```html
 <head>
   <style>
-    p { color: blue; } // Aplies to all paragraphs
+    p { color: blue; } // Aplica a todos os parágrafos
   </style>
 </head>
 ```
 
-**External:**
-In a css file that is referred in the html file as shown below. 
+**Externo:**
+Em um arquivo css que é referenciado no arquivo html como mostrado abaixo.
 ```html
 <link rel="stylesheet" href="styles.css">
 ```
 
-### CSS Selectors and Properties<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+### Seletores e Propriedades CSS<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
 
-Selectors allow you to target specific elements, groups of elements, or elements based on their attributes, states, or relationships to other elements.
+Seletores permitem que você selecione elementos específicos, grupos de elementos ou elementos com base em seus atributos, estados ou relações com outros elementos.
 
-#### Simple Selectors<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
-
+#### Seletores Simples<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
 
 <details markdown="block">
   <summary>
-    Universal Selector (*)
+    Seletor Universal (*)
   </summary>
-Selects all elements on the page.
+Seleciona todos os elementos da página.
 
 ```css
 * {
@@ -1049,9 +1048,9 @@ Selects all elements on the page.
 
 <details markdown="block">
   <summary>
-    Element Selector
+    Seletor de Elemento
   </summary>
-Selects all HTML elements of a specified type (tag name).
+Seleciona todos os elementos HTML de um tipo especificado (nome da tag).
 
 ```css
 p {
@@ -1063,12 +1062,12 @@ p {
 
 <details markdown="block">
   <summary>
-    Class Selector (.class_name)
+    Seletor de Classe (.nome_classe)
   </summary>
-Selects all elements with a specific class attribute.
+Seleciona todos os elementos com um atributo de classe específico.
 
 ```css
-.my-class {
+.minha-classe {
   color: blue;
 }
 ```
@@ -1077,54 +1076,54 @@ Selects all elements with a specific class attribute.
 
 <details markdown="block">
   <summary>
-    ID Selector (#id_name)
+    Seletor de ID (#nome_id)
   </summary>
-Selects a single element with a specific id attribute. IDs should be unique within a page.
+Seleciona um único elemento com um atributo id específico. IDs devem ser únicos em uma página.
 
 ```css
-#header {
+#cabecalho {
   background-color: gray;
 }
 ```
 </details>
 
-#### Combinator Selectors<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
-Combinators allow you to select elements based on their relationship to other elements in the document tree.
+#### Seletores Combinadores<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+Combinadores permitem selecionar elementos com base em sua relação com outros elementos na árvore do documento.
 
 <details markdown="block">
   <summary>
-    Descendant Selector
+    Seletor Descendente
   </summary>
 
 ```css
 div p {
   margin-bottom: 10px;
-} /* Selects all paragraphs inside any div */
+} /* Seleciona todos os parágrafos dentro de qualquer div */
 ```
 
 </details>
 
 <details markdown="block">
   <summary>
-    Child Selector
+    Seletor de Filho Direto
   </summary>
 
 ```css
 ul > li {
   list-style-type: none;
-} /* Selects all li elements that are direct children of a ul */
+} /* Seleciona todos os elementos li que são filhos diretos de um ul */
 ```
 </details>
 
-#### Attribute Selectors<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
-They select elements based on their attributes.
+#### Seletores de Atributo<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+Selecionam elementos com base em seus atributos.
 
 <details markdown="block">
   <summary>
-    Presence Selector ([attribute])
+    Seletor de Presença ([atributo])
   </summary>
 
-Selects elements that have the specified attribute.
+Seleciona elementos que possuem o atributo especificado.
 
 ```css
 [data-tooltip] {
@@ -1135,10 +1134,10 @@ Selects elements that have the specified attribute.
 
 <details markdown="block">
   <summary>
-    Attribute Value Selector ([attribute="value"])
+    Seletor de Valor de Atributo ([atributo="valor"])
   </summary>
 
-Selects elements where the attribute's value is exactly equal to "value".
+Seleciona elementos cujo valor do atributo é exatamente igual a "valor".
 
 ```css
 input[type="text"] {
@@ -1149,136 +1148,133 @@ input[type="text"] {
 </details>
 
 #### Pseudo-classes<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
-Select elements based on a specific state, condition, or position.
-
+Selecionam elementos com base em um estado, condição ou posição específica.
 
 <details markdown="block">
   <summary>
-    User Action Pseudo-classes
+    Pseudo-classes de Ação do Usuário
   </summary>
 
-`:hover:` When the mouse pointer is over an element.
+`:hover:` Quando o ponteiro do mouse está sobre um elemento.
 
-`:active:` When an element is being activated by the user (e.g., clicked).
+`:active:` Quando um elemento está sendo ativado pelo usuário (ex: clicado).
 
-`:focus:` When an element has input focus.
+`:focus:` Quando um elemento tem foco de entrada.
 
-`:visited:` For links that have been visited by the user.
+`:visited:` Para links que já foram visitados pelo usuário.
 
-`:link:` For unvisited links.
+`:link:` Para links não visitados.
 
 </details>
 
 <details markdown="block">
   <summary>
-    Structural Pseudo-classes
+    Pseudo-classes Estruturais
   </summary>
 
-`:first-child:` Selects the first child of its parent.
+`:first-child:` Seleciona o primeiro filho de seu pai.
 
-`:last-child:` Selects the last child of its parent.
+`:last-child:` Seleciona o último filho de seu pai.
 
-`:nth-child(n):` Selects the n-th child of its parent (can use keywords like even, odd, or formulas like 2n+1).
+`:nth-child(n):` Seleciona o enésimo filho de seu pai (pode usar palavras-chave como even, odd, ou fórmulas como 2n+1).
 
-`:first-of-type:` Selects the first sibling of its type.
+`:first-of-type:` Seleciona o primeiro irmão de seu tipo.
 
-`:last-of-type:` Selects the last sibling of its type.
+`:last-of-type:` Seleciona o último irmão de seu tipo.
 
-`:nth-of-type(n):` Selects the n-th sibling of its type.
+`:nth-of-type(n):` Seleciona o enésimo irmão de seu tipo.
 
-`:only-child:` Selects an element that is the only child of its parent.
+`:only-child:` Seleciona um elemento que é o único filho de seu pai.
 
-`:only-of-type:` Selects an element that is the only sibling of its type.
+`:only-of-type:` Seleciona um elemento que é o único irmão de seu tipo.
 
-`:empty:` Selects elements that have no children (including text nodes).
+`:empty:` Seleciona elementos que não têm filhos (incluindo nós de texto).
 
-`:root:` Selects the root element of the document (usually <html>).
-
-</details>
-
-
-<details markdown="block">
-  <summary>
-    Form Pseudo-classes
-  </summary>
-
-`:checked:` For radio buttons or checkboxes that are checked.
-
-`:disabled:` For disabled input elements.
-
-`:enabled:` For enabled input elements.
-
-`:required:` For input elements with the required attribute.
-
-`:optional:` For input elements without the required attribute.
-
-`:valid:` For input elements with valid values.
-
-`:invalid:` For input elements with invalid values.
+`:root:` Seleciona o elemento raiz do documento (geralmente <html>).
 
 </details>
 
 <details markdown="block">
   <summary>
-    Other Pseudo-classes
+    Pseudo-classes de Formulário
   </summary>
 
-`:not(selector):` Selects elements that do NOT match the given selector.
+`:checked:` Para botões de opção ou caixas de seleção marcados.
 
-`:has(selector):` Selects elements that contain at least one element matching the given selector (still experimental/not fully supported in all browsers).
+`:disabled:` Para elementos de entrada desabilitados.
 
-`:is(selector-list):` Matches any element in a comma-separated list of selectors.
+`:enabled:` Para elementos de entrada habilitados.
 
-`:where(selector-list):` Similar to :is(), but adds no specificity.
+`:required:` Para elementos de entrada com o atributo required.
+
+`:optional:` Para elementos de entrada sem o atributo required.
+
+`:valid:` Para elementos de entrada com valores válidos.
+
+`:invalid:` Para elementos de entrada com valores inválidos.
 
 </details>
-
-#### Pseudo-elements <a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
-For specific parts of an element. Prefixed with a double colon (::).
-
 
 <details markdown="block">
   <summary>
-    Other Pseudo-classes
+    Outras Pseudo-classes
   </summary>
 
-`::before:` Inserts content before the content of an element.
+`:not(seletor):` Seleciona elementos que NÃO correspondem ao seletor fornecido.
 
-`::after:` Inserts content after the content of an element.
+`:has(seletor):` Seleciona elementos que contêm pelo menos um elemento correspondente ao seletor (ainda experimental/não totalmente suportado em todos os navegadores).
 
-`::first-letter:` Selects the first letter of the first line of a block-level element.
+`:is(lista-de-seletores):` Corresponde a qualquer elemento em uma lista de seletores separada por vírgulas.
 
-`::first-line:` Selects the first line of a block-level element.
+`:where(lista-de-seletores):` Semelhante ao :is(), mas não adiciona especificidade.
 
-`::selection:` Selects the portion of an element that is highlighted by the user.
+</details>
 
-`::marker:` Selects the marker box of a list item (e.g., bullets or numbers).
+#### Pseudo-elementos <a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+Para partes específicas de um elemento. Prefixados com dois pontos duplos (::).
 
-`::placeholder:` Selects the placeholder text in an input field.
+<details markdown="block">
+  <summary>
+    Outros Pseudo-elementos
+  </summary>
+
+`::before:` Insere conteúdo antes do conteúdo de um elemento.
+
+`::after:` Insere conteúdo após o conteúdo de um elemento.
+
+`::first-letter:` Seleciona a primeira letra da primeira linha de um elemento de bloco.
+
+`::first-line:` Seleciona a primeira linha de um elemento de bloco.
+
+`::selection:` Seleciona a parte de um elemento que está destacada pelo usuário.
+
+`::marker:` Seleciona o marcador de um item de lista (ex: bolinhas ou números).
+
+`::placeholder:` Seleciona o texto de placeholder em um campo de entrada.
 
 </details>
 
 
-### CSS Colors<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
-Colors in CSS can be expressed in different ways:
+### Cores em CSS<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+As cores em CSS podem ser expressas de diferentes formas:
 
-- Named colors: `red`, `blue`
-- Hex: `#ff5733`
+- Nomes de cores: `red`, `blue`
+- Hexadecimal: `#ff5733`
 - RGB: `rgb(255, 87, 51)`
 
-### Font Properties<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
-In CSS there are two main types of fonts: 
-- System Fonts (or Web-Safe Fonts): These are fonts that are generally pre-installed on most operating systems (like Arial, Times New Roman, Verdana, Georgia, etc.). When you specify a system font in your CSS, the user's browser will try to use that font if it's available on their system. If not, it will fall back to a generic font family you specify (e.g., sans-serif).
+### Propriedades de Fonte<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+No CSS existem dois tipos principais de fontes:
+- Fontes do Sistema (ou Fontes Seguras para Web): São fontes geralmente pré-instaladas na maioria dos sistemas operacionais (como Arial, Times New Roman, Verdana, Georgia, etc.). Ao especificar uma fonte do sistema no seu CSS, o navegador do usuário tentará usar essa fonte se estiver disponível. Caso contrário, usará uma família genérica que você especificar (ex: sans-serif).
 
-- Web Fonts (or Custom Fonts): These are font files that you host yourself or link from a web font service (like Google Fonts, Adobe Fonts). When you use a web font, the font file is downloaded by the user's browser along with your website's other assets. This ensures that the user sees the exact font you intended, regardless of what fonts are installed on their system.
+- Fontes Web (ou Fontes Personalizadas): São arquivos de fonte que você hospeda ou vincula de um serviço de fontes web (como Google Fonts, Adobe Fonts). Ao usar uma fonte web, o arquivo da fonte é baixado pelo navegador do usuário junto com os outros arquivos do seu site. Isso garante que o usuário veja exatamente a fonte que você escolheu, independentemente das fontes instaladas no sistema dele.
 
-The common ways to get web fonts:
+As formas comuns de obter fontes web:
 
-- Self-hosting: You download the font files (e.g., .woff2, .woff, .ttf, .otf) and place them on your server.
-- Google Fonts: This is a very popular and easy way. You select fonts from their library, and Google provides you with a <link> tag to put in your HTML <head> or an @import rule for your CSS, which handles the font hosting and delivery for you.
-- Other font services: There are many other services offering web fonts, often with different licensing models.
+- Self-hosting: Você baixa os arquivos de fonte (ex: .woff2, .woff, .ttf, .otf) e coloca no seu servidor.
+- Google Fonts: Muito popular e fácil. Você seleciona fontes da biblioteca deles, e o Google fornece uma tag <link> para colocar no <head> do seu HTML ou uma regra @import para seu CSS, que cuida do fornecimento da fonte.
+- Outros serviços de fontes: Existem muitos outros serviços oferecendo fontes web, geralmente com diferentes modelos de licença.
 
-Below an example of font asigned to the body.
+Abaixo um exemplo de fonte atribuída ao body.
 ```css
 body {
   font-family: 'Roboto', sans-serif;
@@ -1287,85 +1283,83 @@ body {
 }
 ```
 
-### The CSS Box Model<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+### O Modelo de Caixa do CSS<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
 
-Every element on a web page is treated as a rectangular box by the browser. The CSS box model describes how these boxes are structured and how spacing works around and inside elements:
+Todo elemento em uma página web é tratado como uma caixa retangular pelo navegador. O modelo de caixa do CSS descreve como essas caixas são estruturadas e como o espaçamento funciona ao redor e dentro dos elementos:
 
-- **Content**: The actual text, image, or other media inside the element.
-- **Padding**: The space between the content and the border. Padding adds space *inside* the element, around the content.
-- **Border**: The line that wraps around the padding and content. Borders can have different widths, styles, and colors.
-- **Margin**: The space *outside* the border, separating the element from other elements on the page. Margins create space between boxes.
+- **Conteúdo**: O texto, imagem ou outro conteúdo dentro do elemento.
+- **Padding (Preenchimento)**: Espaço entre o conteúdo e a borda. O padding adiciona espaço *dentro* do elemento, ao redor do conteúdo.
+- **Borda**: A linha que envolve o padding e o conteúdo. As bordas podem ter diferentes larguras, estilos e cores.
+- **Margem**: Espaço *fora* da borda, separando o elemento de outros elementos na página. As margens criam espaço entre as caixas.
 
-Visually, the structure is:
+Visualmente, a estrutura é:
 
 ```
-|  Margin  |  ← space outside the border
-| [Border  |  ← border wraps the padding and content
-| |Padding |  ← space inside the border, around content
-| | Content|  ← the actual element content
+|  Margem  |  ← espaço fora da borda
+| [Borda   |  ← borda envolve o padding e o conteúdo
+| |Padding |  ← espaço dentro da borda, ao redor do conteúdo
+| | Conteúdo|  ← o conteúdo real do elemento
 ```
-You can explore the result in the chrome inspector.
+Você pode explorar o resultado no inspetor do Chrome.
 
 ![Margin and border](Margin_border_Chrome.gif)
 
-You can control each part with CSS properties like `margin`, `padding`, and `border`. For example:
+Você pode controlar cada parte com propriedades CSS como `margin`, `padding` e `border`. Por exemplo:
 
 ```css
 div {
-  margin: 20px;      /* space outside the border */
-  padding: 10px;     /* space inside the border */
-  border: 2px solid #333; /* border around the element */
+  margin: 20px;      /* espaço fora da borda */
+  padding: 10px;     /* espaço dentro da borda */
+  border: 2px solid #333; /* borda ao redor do elemento */
 }
 ```
 
-
-
 ---
 
-## 🚀 Introduction to JavaScript<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+## 🚀 Introdução ao JavaScript<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
 
-JavaScript is the programming language that brings web pages to life. While HTML provides the structure and CSS handles the appearance, JavaScript enables interactivity, dynamic content, and logic on the client side (in the browser). Javascript has an extensive and complex list of commands, modules and frameworks that are not explained here. Javascript may be used both for Frontend and Backend. We will only cover some basics here to be able to identify it when inspecting websites. 
+JavaScript é a linguagem de programação que dá vida às páginas web. Enquanto o HTML fornece a estrutura e o CSS cuida da aparência, o JavaScript permite interatividade, conteúdo dinâmico e lógica no lado do cliente (no navegador). O JavaScript possui uma lista extensa e complexa de comandos, módulos e frameworks que não são explicados aqui. O JavaScript pode ser usado tanto no Frontend quanto no Backend. Aqui cobriremos apenas alguns conceitos básicos para que você possa identificá-lo ao inspecionar sites.
 
-### What Can JavaScript Do?<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
-- Respond to user actions (clicks, typing, mouse movement)
-- Change the content or style of a web page without reloading
-- Validate forms before they are submitted
-- Create interactive elements like sliders, modals, and tabs
-- Fetch data from servers and update the page (AJAX, APIs)
-- Build games, animations, and much more
+### O que o JavaScript pode fazer?<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+- Responder a ações do usuário (cliques, digitação, movimento do mouse)
+- Alterar o conteúdo ou o estilo de uma página web sem recarregar
+- Validar formulários antes de serem enviados
+- Criar elementos interativos como sliders, modais e abas
+- Buscar dados de servidores e atualizar a página (AJAX, APIs)
+- Construir jogos, animações e muito mais
 
-### How to Use JavaScript<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
-You can add JavaScript to your web page in several ways:
-- **Inline**: Directly in an HTML element’s attribute (not recommended for complex code)
-- **Internal**: Inside a `<script>` tag in your HTML file
-- **External**: In a separate `.js` file linked to your HTML
+### Como usar JavaScript<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+Você pode adicionar JavaScript à sua página web de várias formas:
+- **Inline**: Diretamente no atributo de um elemento HTML (não recomendado para códigos complexos)
+- **Interno**: Dentro de uma tag `<script>` no seu arquivo HTML
+- **Externo**: Em um arquivo `.js` separado, vinculado ao seu HTML
 
-Example (inline):
+Exemplo (inline):
 ```html
-<button onclick="alert('Hello!')">Click me</button>
+<button onclick="alert('Olá!')">Clique em mim</button>
 ```
 
-Example (internal):
+Exemplo (interno):
 ```html
 <script>
   function greet() {
-    alert('Hello from JavaScript!');
+    alert('Olá do JavaScript!');
   }
 </script>
-<button onclick="greet()">Greet</button>
+<button onclick="greet()">Saudar</button>
 ```
 
-Example (external):
+Exemplo (externo):
 ```html
 <script src="script.js"></script>
 ```
 
-### Try It Yourself<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
-Open your browser’s DevTools (F12), go to the Console tab, and type:
+### Teste você mesmo<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+Abra as DevTools do seu navegador (F12), vá até a aba Console e digite:
 ```js
-console.log('Hello, world!');
+console.log('Olá, mundo!');
 ```
-You’ll see the message appear in the console. This is a great way to experiment and learn JavaScript basics!
+Você verá a mensagem aparecer no console. Esta é uma ótima maneira de experimentar e aprender o básico do JavaScript!
 
 ---
 
