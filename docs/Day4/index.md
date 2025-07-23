@@ -2074,9 +2074,9 @@ You can visualise this code in [W3Schools html web testing](https://www.w3school
 </details>
 
 
-### Markdown, Jekyll e Ruby<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
+## Markdown, Jekyll e Ruby<a href="#top" class="back-to-top-link" aria-label="Back to Top">↑</a>
 
-#### O que é Markdown?
+### O que é Markdown?
 
 Markdown é uma linguagem de marcação leve para formatar texto usando sintaxe de texto simples. Foi projetado para ser fácil de ler e escrever e é amplamente utilizado para documentação, arquivos README e geradores de sites estáticos.
 
@@ -2104,15 +2104,13 @@ Markdown é uma linguagem de marcação leve para formatar texto usando sintaxe 
 
 Para uma referência completa, consulte o [Guia do Markdown](https://www.markdownguide.org/basic-syntax/).
 
-#### Jekyll e Ruby
+### Jekyll e Ruby
 
 [Jekyll](https://jekyllrb.com/) é um gerador de sites estáticos que converte arquivos Markdown em sites HTML. É o motor por trás do GitHub Pages, permitindo que você publique documentação ou blogs diretamente de um repositório do GitHub gratuitamente. Jekyll é escrito na linguagem de programação Ruby.
 
-#### Este Site
+### Este Site
 
 Este site foi construído usando o tema [just-the-docs](https://just-the-docs.github.io/), que é um tema baseado em Jekyll projetado para sites de documentação.
-
-
 
 
 ---
