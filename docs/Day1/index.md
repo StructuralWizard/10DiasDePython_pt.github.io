@@ -206,7 +206,7 @@ nome, saude, inventario = dados_jogador
 dados_jogador[2].append("escudo") # Isso funciona!
 ```
 
-**Fatiamento** permite extrair porções de sequências (listas, strings, tuplas) usando a sintaxe `[inicio:parada:passo]`.
+**Fatiamento** (slicing) permite extrair porções de sequências (listas, strings, tuplas) usando a sintaxe `[inicio:parada:passo]`.
 
 ```python
 # Fatiando uma lista
