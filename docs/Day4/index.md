@@ -605,11 +605,395 @@ Isso pode ser visualizado no [teste da web de HTML da W3Schools](https://www.w3s
   </summary>
 Você pode usar F12 ou clicar com o botão direito e inspecionar para ver o código html de cada elemento.
 
-{% raw %}
+
 ```
-placeholder_pt
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostruário de Elementos HTML</title>
+    <!-- Tailwind CSS CDN para estilização -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Fundo cinza claro */
+            color: #374151; /* Texto cinza escuro */
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8 md:p-12 lg:p-16">
+    <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-xl p-6 sm:p-8 md:p-10 lg:p-12">
+
+        <!-- Seção de Cabeçalho -->
+        <header class="mb-12 text-center">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-600 mb-4 rounded-lg p-2">Mostruário de Elementos HTML</h1>
+            <p class="text-lg sm:text-xl text-gray-700">Um template abrangente demonstrando elementos HTML comuns com Tailwind CSS.</p>
+        </header>
+
+        <!-- Seção de Navegação -->
+        <nav class="mb-12">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4 pb-2 border-b-2 border-blue-300 rounded-lg">Navegação</h2>
+            <ul class="flex flex-wrap gap-4 justify-center">
+                <li><a href="#typography" class="text-blue-600 hover:text-blue-800 text-lg font-medium p-2 rounded-md hover:bg-blue-50 transition-colors duration-200">Tipografia</a></li>
+                <li><a href="#links-images" class="text-blue-600 hover:text-blue-800 text-lg font-medium p-2 rounded-md hover:bg-blue-50 transition-colors duration-200">Links e Imagens</a></li>
+                <li><a href="#lists" class="text-blue-600 hover:text-blue-800 text-lg font-medium p-2 rounded-md hover:bg-blue-50 transition-colors duration-200">Listas</a></li>
+                <li><a href="#tables" class="text-blue-600 hover:text-blue-800 text-lg font-medium p-2 rounded-md hover:bg-blue-50 transition-colors duration-200">Tabelas</a></li>
+                <li><a href="#forms" class="text-blue-600 hover:text-blue-800 text-lg font-medium p-2 rounded-md hover:bg-blue-50 transition-colors duration-200">Formulários</a></li>
+                <li><a href="#media" class="text-blue-600 hover:text-blue-800 text-lg font-medium p-2 rounded-md hover:bg-blue-50 transition-colors duration-200">Mídia</a></li>
+                <li><a href="#interactive" class="text-blue-600 hover:text-blue-800 text-lg font-medium p-2 rounded-md hover:bg-blue-50 transition-colors duration-200">Interativo</a></li>
+            </ul>
+        </nav>
+
+        <!-- Área de Conteúdo Principal -->
+        <main>
+            <!-- Seção de Tipografia -->
+            <section id="typography" class="mb-12 p-6 bg-gray-50 rounded-lg shadow-md">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-4 pb-2 border-b-2 border-blue-300 rounded-lg">Tipografia</h2>
+
+                <!-- Títulos -->
+                <h3 class="text-2xl font-bold text-gray-700 mb-3">Títulos</h3>
+                <p class="mb-4">O HTML fornece seis níveis de títulos, de `h1` (mais importante) a `h6` (menos importante).</p>
+                <h1 class="text-4xl font-extrabold text-blue-700 mb-2">Título 1 (h1) - Título Principal</h1>
+                <h2 class="text-3xl font-bold text-blue-600 mb-2">Título 2 (h2) - Título da Seção</h2>
+                <h3 class="text-2xl font-semibold text-blue-500 mb-2">Título 3 (h3) - Título da Subseção</h3>
+                <h4 class="text-xl font-medium text-blue-400 mb-2">Título 4 (h4) - Título Menor</h4>
+                <h5 class="text-lg font-normal text-blue-300 mb-2">Título 5 (h5) - Título Menor Ainda</h5>
+                <h6 class="text-base font-light text-blue-200 mb-6">Título 6 (h6) - Título Menos Importante</h6>
+
+                <!-- Parágrafos -->
+                <h3 class="text-2xl font-bold text-gray-700 mb-3">Parágrafos</h3>
+                <p class="mb-4 text-gray-600 leading-relaxed">
+                    Este é um parágrafo padrão (`&lt;p&gt;`) de texto. É usado para blocos de conteúdo.
+                    Podemos adicionar algum <strong class="font-bold text-gray-800">texto em negrito</strong> e
+                    <em>texto enfatizado (itálico)</em> usando as tags `&lt;strong&gt;` e `&lt;em&gt;`.
+                </p>
+                <p class="mb-6 text-gray-600 leading-relaxed">
+                    Aqui está outro parágrafo demonstrando várias opções de formatação de texto inline.
+                    Você pode <mark class="bg-yellow-200 px-1 rounded">destacar texto</mark> usando `&lt;mark&gt;`.
+                    <del class="line-through text-red-500">Texto deletado</del> (`&lt;del&gt;`) e
+                    <ins class="underline text-green-600">texto inserido</ins> (`&lt;ins&gt;`) também são possíveis.
+                    Para notação científica, você pode usar H<sub class="align-sub">2</sub>O (`&lt;sub&gt;`) ou
+                    E=mc<sup class="align-super">2</sup> (`&lt;sup&gt;`).
+                </p>
+            </section>
+
+            <!-- Seção de Links e Imagens -->
+            <section id="links-images" class="mb-12 p-6 bg-gray-50 rounded-lg shadow-md">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-4 pb-2 border-b-2 border-blue-300 rounded-lg">Links e Imagens</h2>
+
+                <!-- Links -->
+                <h3 class="text-2xl font-bold text-gray-700 mb-3">Links</h3>
+                <p class="mb-4">
+                    Este é um link externo:
+                    <a href="https://www.google.com" target="_blank" rel="noopener noreferrer"
+                       class="text-blue-600 hover:text-blue-800 underline font-medium transition-colors duration-200">
+                        Visite o Google
+                    </a>.
+                    Links (`&lt;a&gt;`) são cruciais para a navegação. O atributo `target="_blank"` abre o link em uma nova aba, e `rel="noopener noreferrer"` é uma boa prática de segurança para links externos.
+                </p>
+
+                <!-- Imagens -->
+                <h3 class="text-2xl font-bold text-gray-700 mb-3">Imagens</h3>
+                <p class="mb-4">
+                    Uma imagem (`&lt;img&gt;`) exibida abaixo. O atributo `alt` é importante para a acessibilidade.
+                    O atributo `onerror` fornece um fallback caso a imagem não carregue.
+                </p>
+                <div class="flex justify-center mb-6">
+                    <img src="https://placehold.co/400x200/ADD8E6/000000?text=Imagem+de+Exemplo"
+                         alt="Uma imagem de exemplo simples"
+                         class="max-w-full h-auto rounded-lg shadow-md border-2 border-gray-200"
+                         onerror="this.onerror=null;this.src='https://placehold.co/400x200/FF0000/FFFFFF?text=Erro+ao+Carregar+Imagem';">
+                </div>
+            </section>
+
+            <!-- Seção de Listas -->
+            <section id="lists" class="mb-12 p-6 bg-gray-50 rounded-lg shadow-md">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-4 pb-2 border-b-2 border-blue-300 rounded-lg">Listas</h2>
+
+                <!-- Lista Não Ordenada -->
+                <h3 class="text-2xl font-bold text-gray-700 mb-3">Lista Não Ordenada (`&lt;ul&gt;`)</h3>
+                <p class="mb-2">Itens em uma lista não ordenada são tipicamente marcados com pontos.</p>
+                <ul class="list-disc list-inside mb-6 pl-4 text-gray-700">
+                    <li class="mb-1">Item Um</li>
+                    <li class="mb-1">Item Dois
+                        <ul class="list-circle list-inside mt-1 pl-4">
+                            <li class="mb-1">Item Aninhado A</li>
+                            <li class="mb-1">Item Aninhado B</li>
+                        </ul>
+                    </li>
+                    <li class="mb-1">Item Três</li>
+                </ul>
+
+                <!-- Lista Ordenada -->
+                <h3 class="text-2xl font-bold text-gray-700 mb-3">Lista Ordenada (`&lt;ol&gt;`)</h3>
+                <p class="mb-2">Itens em uma lista ordenada são tipicamente numerados.</p>
+                <ol class="list-decimal list-inside mb-6 pl-4 text-gray-700">
+                    <li class="mb-1">Primeiro passo</li>
+                    <li class="mb-1">Segundo passo</li>
+                    <li class="mb-1">Terceiro passo</li>
+                </ol>
+
+                <!-- Lista de Descrição -->
+                <h3 class="text-2xl font-bold text-gray-700 mb-3">Lista de Descrição (`&lt;dl&gt;`)</h3>
+                <p class="mb-2">Uma lista de termos e suas descrições.</p>
+                <dl class="mb-6 text-gray-700">
+                    <dt class="font-semibold text-gray-800 mt-2">HTML</dt>
+                    <dd class="ml-6 mb-1">HyperText Markup Language: A linguagem de marcação padrão para criar páginas da web.</dd>
+                    <dt class="font-semibold text-gray-800 mt-2">CSS</dt>
+                    <dd class="ml-6 mb-1">Cascading Style Sheets: Uma linguagem de folha de estilo usada para descrever a apresentação de um documento escrito em HTML.</dd>
+                    <dt class="font-semibold text-gray-800 mt-2">JavaScript</dt>
+                    <dd class="ml-6 mb-1">Uma linguagem de programação que permite páginas da web interativas.</dd>
+                </dl>
+            </section>
+
+            <!-- Seção de Tabelas -->
+            <section id="tables" class="mb-12 p-6 bg-gray-50 rounded-lg shadow-md overflow-x-auto">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-4 pb-2 border-b-2 border-blue-300 rounded-lg">Tabelas</h2>
+                <p class="mb-4">Tabelas (`&lt;table&gt;`) são usadas para exibir dados tabulares.</p>
+                <table class="w-full border-collapse text-left rounded-lg overflow-hidden shadow-md">
+                    <thead class="bg-blue-600 text-white">
+                        <tr>
+                            <th class="py-3 px-4 border-b border-blue-700">Nome</th>
+                            <th class="py-3 px-4 border-b border-blue-700">Idade</th>
+                            <th class="py-3 px-4 border-b border-blue-700">Cidade</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white">
+                        <tr>
+                            <td class="py-2 px-4 border-b border-gray-200">João da Silva</td>
+                            <td class="py-2 px-4 border-b border-gray-200">30</td>
+                            <td class="py-2 px-4 border-b border-gray-200">Nova York</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b border-gray-200">Maria Souza</td>
+                            <td class="py-2 px-4 border-b border-gray-200">24</td>
+                            <td class="py-2 px-4 border-b border-gray-200">Los Angeles</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b border-gray-200">Pedro Oliveira</td>
+                            <td class="py-2 px-4 border-b border-gray-200">45</td>
+                            <td class="py-2 px-4 border-b border-gray-200">Chicago</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Seção de Formulários -->
+            <section id="forms" class="mb-12 p-6 bg-gray-50 rounded-lg shadow-md">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-4 pb-2 border-b-2 border-blue-300 rounded-lg">Formulários</h2>
+                <p class="mb-4">Formulários (`&lt;form&gt;`) são usados para coletar a entrada do usuário.</p>
+
+                <form class="space-y-6">
+                    <!-- Entrada de Texto -->
+                    <div>
+                        <label for="username" class="block text-sm font-medium text-gray-700 mb-1">Nome de usuário:</label>
+                        <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário"
+                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                               required>
+                    </div>
+
+                    <!-- Entrada de Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="voce@exemplo.com"
+                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+
+                    <!-- Entrada de Senha -->
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Senha:</label>
+                        <input type="password" id="password" name="password" placeholder="••••••••"
+                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                               minlength="8">
+                    </div>
+
+                    <!-- Entrada de Número -->
+                    <div>
+                        <label for="quantity" class="block text-sm font-medium text-gray-700 mb-1">Quantidade:</label>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1" max="10"
+                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+
+                    <!-- Textarea -->
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensagem:</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Sua mensagem aqui..."
+                                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                    </div>
+
+                    <!-- Select (Dropdown) -->
+                    <div>
+                        <label for="country" class="block text-sm font-medium text-gray-700 mb-1">País:</label>
+                        <select id="country" name="country"
+                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-white">
+                            <option value="">--Por favor, escolha uma opção--</option>
+                            <option value="usa">Estados Unidos</option>
+                            <option value="can">Canadá</option>
+                            <option value="mex">México</option>
+                        </select>
+                    </div>
+
+                    <!-- Checkbox -->
+                    <div class="flex items-center">
+                        <input type="checkbox" id="newsletter" name="newsletter"
+                               class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                        <label for="newsletter" class="ml-2 block text-sm text-gray-900">Inscrever-se na newsletter</label>
+                    </div>
+
+                    <!-- Botões de Rádio (Fieldset para agrupar) -->
+                    <fieldset class="border border-gray-300 p-4 rounded-md">
+                        <legend class="text-base font-medium text-gray-900">Cor Favorita:</legend>
+                        <div class="mt-2 space-y-2">
+                            <div class="flex items-center">
+                                <input type="radio" id="color_red" name="fav_color" value="red"
+                                       class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                                <label for="color_red" class="ml-2 block text-sm text-gray-900">Vermelho</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="color_blue" name="fav_color" value="blue" checked
+                                       class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                                <label for="color_blue" class="ml-2 block text-sm text-gray-900">Azul</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="color_green" name="fav_color" value="green"
+                                       class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
+                                <label for="color_green" class="ml-2 block text-sm text-gray-900">Verde</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Entrada de Arquivo -->
+                    <div>
+                        <label for="profile_pic" class="block text-sm font-medium text-gray-700 mb-1">Carregar Foto de Perfil:</label>
+                        <input type="file" id="profile_pic" name="profile_pic" accept="image/*"
+                               class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                    </div>
+
+                    <!-- Entrada de Faixa -->
+                    <div>
+                        <label for="volume" class="block text-sm font-medium text-gray-700 mb-1">Volume:</label>
+                        <input type="range" id="volume" name="volume" min="0" max="100" value="50"
+                               class="mt-1 block w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg">
+                    </div>
+
+                    <!-- Entrada de Data -->
+                    <div>
+                        <label for="event_date" class="block text-sm font-medium text-gray-700 mb-1">Data do Evento:</label>
+                        <input type="date" id="event_date" name="event_date"
+                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+
+                    <!-- Entrada de Cor -->
+                    <div>
+                        <label for="fav_color_picker" class="block text-sm font-medium text-gray-700 mb-1">Escolha sua cor favorita:</label>
+                        <input type="color" id="fav_color_picker" name="fav_color_picker" value="#4A90E2"
+                               class="mt-1 block w-24 h-10 border border-gray-300 rounded-md cursor-pointer">
+                    </div>
+
+                    <!-- Botão de Envio -->
+                    <div>
+                        <button type="submit"
+                                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
+                            Enviar Formulário
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Seção de Mídia -->
+            <section id="media" class="mb-12 p-6 bg-gray-50 rounded-lg shadow-md">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-4 pb-2 border-b-2 border-blue-300 rounded-lg">Mídia</h2>
+
+                <!-- Áudio -->
+                <h3 class="text-2xl font-bold text-gray-700 mb-3">Áudio (`&lt;audio&gt;`)</h3>
+                <p class="mb-4">Incorpore conteúdo de áudio. Nota: Uma URL de arquivo de áudio real seria necessária aqui.</p>
+                <div class="flex justify-center mb-6">
+                    <audio controls class="w-full max-w-lg rounded-lg shadow-md bg-gray-200 p-2">
+                        <!-- Substitua por uma fonte de áudio válida -->
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </div>
+
+                <!-- Vídeo -->
+                <h3 class="text-2xl font-bold text-gray-700 mb-3">Vídeo (`&lt;video&gt;`)</h3>
+                <p class="mb-4">Incorpore conteúdo de vídeo. Nota: Uma URL de arquivo de vídeo real seria necessária aqui.</p>
+                <div class="flex justify-center mb-6">
+                    <video controls width="640" height="360" poster="https://placehold.co/640x360/A0A0A0/FFFFFF?text=Placeholder+de+Vídeo"
+                           class="max-w-full h-auto rounded-lg shadow-md border-2 border-gray-200">
+                        <!-- Substitua por uma fonte de vídeo válida -->
+                        <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                        Seu navegador não suporta a tag de vídeo.
+                    </video>
+                </div>
+            </section>
+
+            <!-- Seção de Elementos Interativos -->
+            <section id="interactive" class="mb-12 p-6 bg-gray-50 rounded-lg shadow-md">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-4 pb-2 border-b-2 border-blue-300 rounded-lg">Elementos Interativos</h2>
+
+                <!-- Detalhes/Resumo -->
+                <h3 class="text-2xl font-bold text-gray-700 mb-3">Detalhes e Resumo (`&lt;details&gt;`, `&lt;summary&gt;`)</h3>
+                <p class="mb-4">Fornece um widget de divulgação sob demanda que o usuário pode abrir e fechar.</p>
+                <details class="bg-white border border-gray-300 rounded-md p-4 shadow-sm cursor-pointer hover:bg-gray-100 transition-colors duration-200">
+                    <summary class="font-semibold text-lg text-blue-700">Clique para revelar mais informações</summary>
+                    <div class="mt-3 text-gray-700 leading-relaxed">
+                        <p>Este conteúdo está oculto por padrão e é revelado quando o resumo é clicado.</p>
+                        <p>É útil para FAQs, acordeões ou para ocultar detalhes menos importantes.</p>
+                    </div>
+                </details>
+            </section>
+        </main>
+
+        <!-- Seção Aside (para conteúdo tangencial) -->
+        <aside class="mb-12 p-6 bg-blue-50 rounded-lg shadow-md border-l-4 border-blue-300">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4 pb-2 border-b-2 border-blue-300 rounded-lg">Sobre Este Template</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Este template serve como uma referência rápida para elementos HTML comuns. Cada seção demonstra uma categoria diferente de tags e como elas podem ser estilizadas usando classes de utilidade do <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline font-medium">Tailwind CSS</a>.
+            </p>
+            <p class="mt-3 text-gray-700 leading-relaxed">
+                Lembre-se de aplicar HTML semântico para melhor acessibilidade e SEO.
+            </p>
+        </aside>
+
+        <!-- Seção de Rodapé -->
+        <footer class="text-center text-gray-600 mt-12 pt-6 border-t-2 border-gray-200">
+            <p>&copy; 2025 Mostruário de Elementos HTML. Todos os direitos reservados.</p>
+            <p class="text-sm mt-2">
+                Criado com amor usando HTML e Tailwind CSS.
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- Exemplo de JavaScript (Opcional) -->
+    <script>
+        // Um exemplo simples de JavaScript demonstrando um log no console
+        // Este script é executado após o carregamento do documento HTML.
+        console.log("Mostruário de Elementos HTML Carregado!");
+
+        // Exemplo de adição de um ouvinte de evento a um botão (se você tivesse um)
+        document.addEventListener('DOMContentLoaded', () => {
+            const submitButton = document.querySelector('button[type="submit"]');
+            if (submitButton) {
+                submitButton.addEventListener('click', (event) => {
+                    // Previne o envio padrão do formulário para demonstração
+                    event.preventDefault();
+                    console.log('Tentativa de envio do formulário!');
+                    // Em uma aplicação real, você manipularia os dados do formulário aqui,
+                    // por exemplo, enviando-os para um servidor usando a API fetch.
+                    // Por enquanto, apenas mostraremos uma mensagem simples no console.
+                });
+            }
+        });
+    </script>
+</body>
+</html>
 ```
-{% endraw %}
+
 
 </details>
 
