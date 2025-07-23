@@ -14,7 +14,7 @@ nav_order: 7
 
 Pronto para transformar dados brutos em insights acionáveis? Esta lição abrangente leva você através do fluxo de trabalho completo de ciência de dados usando as bibliotecas mais poderosas do Python. Você aprenderá a carregar, limpar, visualizar e analisar dados, culminando na construção de seu primeiro modelo de aprendizado de máquina. **Aprendizado contínuo**: mantenha-se atualizado com novas técnicas e ferramentas.
 
-Também descobriremos um recurso gratuito incrível fornecido pelo Google: <a href="https://colab.research.google.com/" target="_blank">Colab</a>. Em vez de usar o VS Code em sua própria máquina, usaremos o <a href="https://colab.research.google.com/" target="_blank">Colab</a>, que também vem com seu próprio agente Gemini. A lição de hoje pode ser seguida neste site do GitHub e no <a href="https://drive.google.com/file/d/1DTIbZdG36giPL1STjiOqQ08dD2CmFSOY/view?usp=sharing" target="_blank">meu Colab</a>, onde você pode ver tanto o código quanto a saída. Você pode copiar o colab para sua própria conta e brincar com ele.
+Também descobriremos um recurso gratuito incrível fornecido pelo Google: <a href="https://colab.research.google.com/" target="_blank">Colab</a>. Em vez de usar o VS Code em sua própria máquina, usaremos o <a href="https://colab.research.google.com/" target="_blank">Colab</a>, que também vem com seu próprio agente Gemini. A lição de hoje pode ser seguida neste site do GitHub e no <a href="https://colab.research.google.com/drive/1cmTAGL9Nf8giozuUyPr_Ul1CO6rFq45z?usp=sharing" target="_blank">meu Colab</a>, onde você pode ver tanto o código quanto a saída. Você pode copiar o colab para sua própria conta e brincar com ele.
 
 ---
 
