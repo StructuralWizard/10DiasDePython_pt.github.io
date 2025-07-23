@@ -1398,9 +1398,338 @@ You can visualise this code in [W3Schools html web testing](https://www.w3school
 
 {% raw %}
 ```html
-placeholder
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostruário de Bootstrap e Tailwind CSS</title>
+    <!-- Fonte Inter do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Fundo cinza claro */
+        }
+        .section-header {
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: #343a40;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 0.75rem; /* Cantos mais arredondados */
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .btn-custom {
+            background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            border: none;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            color: white; /* Garante que o texto permaneça branco ao passar o mouse */
+        }
+        /* Estilos personalizados para melhor espaçamento e estética */
+        .container-fluid {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .container {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Seção da Barra de Navegação -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm py-3 px-4">
+        <div class="container-fluid">
+            <a class="navbar-brand text-lg font-bold text-gray-800" href="#">Mostruário Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto space-x-4">
+                    <li class="nav-item">
+                        <a class="nav-link text-gray-700 hover:text-blue-600 font-medium" aria-current="page" href="#layout">Layout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-gray-700 hover:text-blue-600 font-medium" href="#components">Componentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-gray-700 hover:text-blue-600 font-medium" href="#forms">Formulários</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-gray-700 hover:text-blue-600 font-medium" href="#utilities">Utilitários</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção de Herói -->
+    <div class="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-20 px-4 text-center rounded-b-lg shadow-lg">
+        <div class="container mx-auto">
+            <h1 class="text-5xl font-extrabold mb-4">Explore o Poder do Bootstrap</h1>
+            <p class="text-xl mb-8 opacity-90">Um template abrangente mostrando recursos essenciais do Bootstrap e design responsivo.</p>
+            <button class="btn btn-lg btn-custom shadow-md hover:shadow-xl">Começar</button>
+        </div>
+    </div>
+
+    <main class="container mx-auto mt-12 px-4 md:px-0">
+
+        <!-- Seção de Layout -->
+        <section id="layout" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-3xl section-header mb-8">1. Layout e Sistema de Grade</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4 bg-blue-100 border border-blue-300 rounded-md text-blue-800 h-full flex items-center justify-center">
+                        <p class="text-lg font-medium">Coluna 1 (col-md-6 col-lg-4)</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4 bg-green-100 border border-green-300 rounded-md text-green-800 h-full flex items-center justify-center">
+                        <p class="text-lg font-medium">Coluna 2 (col-md-6 col-lg-4)</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4 bg-yellow-100 border border-yellow-300 rounded-md text-yellow-800 h-full flex items-center justify-center">
+                        <p class="text-lg font-medium">Coluna 3 (col-md-6 col-lg-4)</p>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="p-4 bg-purple-100 border border-purple-300 rounded-md text-purple-800 h-full flex items-center justify-center">
+                        <p class="text-lg font-medium">Coluna de Largura Total (col-md-12)</p>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-6 text-gray-700">Demonstra o sistema de grade responsivo do Bootstrap, adaptando colunas para diferentes tamanhos de tela.</p>
+        </section>
+
+        <!-- Seção de Componentes -->
+        <section id="components" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-3xl section-header mb-8">2. Componentes Principais</h2>
+
+            <!-- Cards -->
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">2.1 Cards</h3>
+            <div class="row g-4 mb-8">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-full">
+                        <img src="https://placehold.co/600x400/FF5733/ffffff?text=Imagem+1" class="card-img-top w-full h-48 object-cover" alt="Imagem do Card 1">
+                        <div class="card-body">
+                            <h5 class="card-title text-xl font-semibold mb-2">Título do Card Um</h5>
+                            <p class="card-text text-gray-700">Texto de exemplo rápido para construir sobre o título do card e compor a maior parte do conteúdo do card.</p>
+                            <a href="#" class="btn btn-primary bg-blue-500 hover:bg-blue-600 border-none rounded-md px-4 py-2">Ir para algum lugar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-full">
+                        <img src="https://placehold.co/600x400/33FF57/ffffff?text=Imagem+2" class="card-img-top w-full h-48 object-cover" alt="Imagem do Card 2">
+                        <div class="card-body">
+                            <h5 class="card-title text-xl font-semibold mb-2">Título do Card Dois</h5>
+                            <p class="card-text text-gray-700">Outro exemplo de card com um conteúdo um pouco mais longo para mostrar a consistência da altura do card.</p>
+                            <a href="#" class="btn btn-success bg-green-500 hover:bg-green-600 border-none rounded-md px-4 py-2">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-full">
+                        <img src="https://placehold.co/600x400/5733FF/ffffff?text=Imagem+3" class="card-img-top w-full h-48 object-cover" alt="Imagem do Card 3">
+                        <div class="card-body">
+                            <h5 class="card-title text-xl font-semibold mb-2">Título do Card Três</h5>
+                            <p class="card-text text-gray-700">Este card demonstra uma imagem no topo e conteúdo de corpo padrão.</p>
+                            <a href="#" class="btn btn-warning bg-yellow-500 hover:bg-yellow-600 border-none rounded-md px-4 py-2">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botões -->
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">2.2 Botões</h3>
+            <div class="flex flex-wrap gap-3 mb-8 items-center">
+                <button type="button" class="btn btn-primary rounded-lg px-4 py-2 shadow-md">Primário</button>
+                <button type="button" class="btn btn-secondary rounded-lg px-4 py-2 shadow-md">Secundário</button>
+                <button type="button" class="btn btn-success rounded-lg px-4 py-2 shadow-md">Sucesso</button>
+                <button type="button" class="btn btn-danger rounded-lg px-4 py-2 shadow-md">Perigo</button>
+                <button type="button" class="btn btn-warning rounded-lg px-4 py-2 shadow-md">Aviso</button>
+                <button type="button" class="btn btn-info rounded-lg px-4 py-2 shadow-md">Info</button>
+                <button type="button" class="btn btn-light rounded-lg px-4 py-2 shadow-md">Claro</button>
+                <button type="button" class="btn btn-dark rounded-lg px-4 py-2 shadow-md">Escuro</button>
+                <button type="button" class="btn btn-link rounded-lg px-4 py-2">Link</button>
+                <button type="button" class="btn btn-outline-primary rounded-lg px-4 py-2">Contorno Primário</button>
+                <button type="button" class="btn btn-custom rounded-lg px-4 py-2">Gradiente Personalizado</button>
+            </div>
+
+            <!-- Alertas -->
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">2.3 Alertas</h3>
+            <div class="mb-8 space-y-3">
+                <div class="alert alert-primary rounded-lg p-3" role="alert">
+                    Um alerta primário simples—confira!
+                </div>
+                <div class="alert alert-secondary rounded-lg p-3" role="alert">
+                    Um alerta secundário simples—confira!
+                </div>
+                <div class="alert alert-success rounded-lg p-3" role="alert">
+                    Um alerta de sucesso simples—confira!
+                </div>
+                <div class="alert alert-danger rounded-lg p-3" role="alert">
+                    Um alerta de perigo simples—confira!
+                </div>
+                <div class="alert alert-warning rounded-lg p-3" role="alert">
+                    Um alerta de aviso simples—confira!
+                </div>
+                <div class="alert alert-info rounded-lg p-3" role="alert">
+                    Um alerta de informação simples—confira!
+                </div>
+            </div>
+
+            <!-- Modais -->
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">2.4 Modais</h3>
+            <button type="button" class="btn btn-primary rounded-lg px-4 py-2 shadow-md" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Lançar modal de demonstração
+            </button>
+
+            <!-- Estrutura do Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog rounded-lg">
+                    <div class="modal-content rounded-lg shadow-lg">
+                        <div class="modal-header border-b border-gray-200">
+                            <h5 class="modal-title text-xl font-semibold" id="exampleModalLabel">Título do modal</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-gray-700">
+                            Este é um exemplo de conteúdo de modal. Você pode colocar qualquer conteúdo HTML aqui, como formulários, imagens ou texto.
+                        </div>
+                        <div class="modal-footer border-t border-gray-200">
+                            <button type="button" class="btn btn-secondary rounded-lg px-4 py-2" data-bs-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-primary rounded-lg px-4 py-2">Salvar alterações</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Formulários -->
+        <section id="forms" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-3xl section-header mb-8">3. Formulários</h2>
+            <form>
+                <div class="mb-4">
+                    <label for="exampleInputEmail1" class="form-label text-gray-700 font-medium">Endereço de email</label>
+                    <input type="email" class="form-control rounded-md p-2 border border-gray-300 focus:ring focus:ring-blue-200" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text text-sm text-gray-500 mt-1">Nós nunca compartilharemos seu email com ninguém.</div>
+                </div>
+                <div class="mb-4">
+                    <label for="exampleInputPassword1" class="form-label text-gray-700 font-medium">Senha</label>
+                    <input type="password" class="form-control rounded-md p-2 border border-gray-300 focus:ring focus:ring-blue-200" id="exampleInputPassword1">
+                </div>
+                <div class="mb-4 form-check">
+                    <input type="checkbox" class="form-check-input rounded-sm" id="exampleCheck1">
+                    <label class="form-check-label text-gray-700" for="exampleCheck1">Me marque</label>
+                </div>
+                <div class="mb-4">
+                    <label for="formControlTextarea1" class="form-label text-gray-700 font-medium">Exemplo de área de texto</label>
+                    <textarea class="form-control rounded-md p-2 border border-gray-300 focus:ring focus:ring-blue-200" id="formControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="formFile" class="form-label text-gray-700 font-medium">Exemplo de entrada de arquivo padrão</label>
+                    <input class="form-control rounded-md p-2 border border-gray-300 focus:ring focus:ring-blue-200" type="file" id="formFile">
+                </div>
+                <div class="mb-4">
+                    <label for="formSelect" class="form-label text-gray-700 font-medium">Opção de seleção</label>
+                    <select class="form-select rounded-md p-2 border border-gray-300 focus:ring focus:ring-blue-200" aria-label="Default select example" id="formSelect">
+                        <option selected>Abra este menu de seleção</option>
+                        <option value="1">Um</option>
+                        <option value="2">Dois</option>
+                        <option value="3">Três</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary rounded-lg px-4 py-2 shadow-md">Enviar</button>
+            </form>
+        </section>
+
+        <!-- Seção de Utilitários -->
+        <section id="utilities" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-3xl section-header mb-8">4. Classes Utilitárias</h2>
+
+            <!-- Tipografia -->
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">4.1 Tipografia</h3>
+            <p class="h1 text-blue-700 mb-2">h1. Título Bootstrap</p>
+            <p class="h2 text-green-700 mb-2">h2. Título Bootstrap</p>
+            <p class="h3 text-purple-700 mb-2">h3. Título Bootstrap</p>
+            <p class="lead text-lg text-gray-700 mb-2">Este é um parágrafo de destaque, indicando um elemento de texto mais proeminente.</p>
+            <p class="text-muted text-gray-500 mb-2">Este texto está silenciado.</p>
+            <p class="font-bold mb-2">Este texto está em negrito usando o font-bold do Tailwind.</p>
+            <p class="text-decoration-underline mb-8">Este texto está sublinhado.</p>
+
+            <!-- Espaçamento (Margem e Preenchimento) -->
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">4.2 Espaçamento</h3>
+            <div class="bg-blue-100 p-4 mb-4 rounded-md">
+                <div class="bg-blue-300 p-2 m-4 rounded-md">
+                    <p class="text-blue-900">Esta div tem margem `m-4` do Tailwind.</p>
+                </div>
+            </div>
+            <div class="bg-green-100 p-4 mb-8 rounded-md">
+                <div class="bg-green-300 py-3 px-5 rounded-md">
+                    <p class="text-green-900">Esta div tem preenchimento `py-3 px-5` do Tailwind.</p>
+                </div>
+            </div>
+
+            <!-- Cores -->
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">4.3 Cores</h3>
+            <div class="flex flex-wrap gap-4 mb-8">
+                <div class="p-4 rounded-md text-white bg-primary shadow-md">Cor Primária</div>
+                <div class="p-4 rounded-md text-white bg-secondary shadow-md">Cor Secundária</div>
+                <div class="p-4 rounded-md text-white bg-success shadow-md">Cor de Sucesso</div>
+                <div class="p-4 rounded-md text-white bg-danger shadow-md">Cor de Perigo</div>
+                <div class="p-4 rounded-md text-dark bg-warning shadow-md">Cor de Aviso</div>
+                <div class="p-4 rounded-md text-white bg-info shadow-md">Cor de Informação</div>
+                <div class="p-4 rounded-md text-dark bg-light shadow-md border">Cor Clara</div>
+                <div class="p-4 rounded-md text-white bg-dark shadow-md">Cor Escura</div>
+                <div class="p-4 rounded-md text-white bg-gradient-to-r from-pink-500 to-red-500 shadow-md">Gradiente Personalizado</div>
+            </div>
+
+            <!-- Sombras -->
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">4.4 Sombras</h3>
+            <div class="flex flex-wrap gap-6 mb-8">
+                <div class="p-6 bg-white rounded-lg shadow-sm">Sombra Pequena</div>
+                <div class="p-6 bg-white rounded-lg shadow-md">Sombra Média</div>
+                <div class="p-6 bg-white rounded-lg shadow-lg">Sombra Grande</div>
+                <div class="p-6 bg-white rounded-lg shadow-xl">Sombra Extra Grande</div>
+                <div class="p-6 bg-white rounded-lg shadow-2xl">Sombra 2XL</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-white text-center py-8 mt-12 rounded-t-lg shadow-inner">
+        <p class="text-sm">&copy; 2024 Mostruário Bootstrap. Todos os direitos reservados.</p>
+        <p class="text-xs opacity-75 mt-2">Construído com Bootstrap e Tailwind CSS</p>
+    </footer>
+
+    <!-- Pacote JavaScript do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
 ```
-{% raw %}
+{% endraw %}
 </details>
 
 
@@ -1410,7 +1739,335 @@ placeholder
   </summary>
 
 ```
-placeholder
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostruário de Bootstrap e Tailwind CSS</title>
+    <!-- Fonte Inter do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Fundo cinza claro */
+        }
+        .section-header {
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: #343a40;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 0.75rem; /* Cantos mais arredondados */
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .btn-custom {
+            background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            border: none;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            color: white; /* Garante que o texto permaneça branco ao passar o mouse */
+        }
+        /* Estilos personalizados para melhor espaçamento e estética */
+        .container-fluid {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .container {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Seção da Barra de Navegação -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm py-3 px-4">
+        <div class="container-fluid">
+            <a class="navbar-brand text-lg font-bold text-gray-800" href="#">Mostruário Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto space-x-4">
+                    <li class="nav-item">
+                        <a class="nav-link text-gray-700 hover:text-blue-600 font-medium" aria-current="page" href="#layout">Layout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-gray-700 hover:text-blue-600 font-medium" href="#components">Componentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-gray-700 hover:text-blue-600 font-medium" href="#forms">Formulários</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-gray-700 hover:text-blue-600 font-medium" href="#utilities">Utilitários</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção de Herói -->
+    <div class="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-20 px-4 text-center rounded-b-lg shadow-lg">
+        <div class="container mx-auto">
+            <h1 class="text-5xl font-extrabold mb-4">Explore o Poder do Bootstrap</h1>
+            <p class="text-xl mb-8 opacity-90">Um template abrangente mostrando recursos essenciais do Bootstrap e design responsivo.</p>
+            <button class="btn btn-lg btn-custom shadow-md hover:shadow-xl">Começar</button>
+        </div>
+    </div>
+
+    <main class="container mx-auto mt-12 px-4 md:px-0">
+
+        <!-- Seção de Layout -->
+        <section id="layout" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-3xl section-header mb-8">1. Layout e Sistema de Grade</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4 bg-blue-100 border border-blue-300 rounded-md text-blue-800 h-full flex items-center justify-center">
+                        <p class="text-lg font-medium">Coluna 1 (col-md-6 col-lg-4)</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4 bg-green-100 border border-green-300 rounded-md text-green-800 h-full flex items-center justify-center">
+                        <p class="text-lg font-medium">Coluna 2 (col-md-6 col-lg-4)</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4 bg-yellow-100 border border-yellow-300 rounded-md text-yellow-800 h-full flex items-center justify-center">
+                        <p class="text-lg font-medium">Coluna 3 (col-md-6 col-lg-4)</p>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="p-4 bg-purple-100 border border-purple-300 rounded-md text-purple-800 h-full flex items-center justify-center">
+                        <p class="text-lg font-medium">Coluna de Largura Total (col-md-12)</p>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-6 text-gray-700">Demonstra o sistema de grade responsivo do Bootstrap, adaptando colunas para diferentes tamanhos de tela.</p>
+        </section>
+
+        <!-- Seção de Componentes -->
+        <section id="components" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-3xl section-header mb-8">2. Componentes Principais</h2>
+
+            <!-- Cards -->
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">2.1 Cards</h3>
+            <div class="row g-4 mb-8">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-full">
+                        <img src="https://placehold.co/600x400/FF5733/ffffff?text=Imagem+1" class="card-img-top w-full h-48 object-cover" alt="Imagem do Card 1">
+                        <div class="card-body">
+                            <h5 class="card-title text-xl font-semibold mb-2">Título do Card Um</h5>
+                            <p class="card-text text-gray-700">Texto de exemplo rápido para construir sobre o título do card e compor a maior parte do conteúdo do card.</p>
+                            <a href="#" class="btn btn-primary bg-blue-500 hover:bg-blue-600 border-none rounded-md px-4 py-2">Ir para algum lugar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-full">
+                        <img src="https://placehold.co/600x400/33FF57/ffffff?text=Imagem+2" class="card-img-top w-full h-48 object-cover" alt="Imagem do Card 2">
+                        <div class="card-body">
+                            <h5 class="card-title text-xl font-semibold mb-2">Título do Card Dois</h5>
+                            <p class="card-text text-gray-700">Outro exemplo de card com um conteúdo um pouco mais longo para mostrar a consistência da altura do card.</p>
+                            <a href="#" class="btn btn-success bg-green-500 hover:bg-green-600 border-none rounded-md px-4 py-2">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-full">
+                        <img src="https://placehold.co/600x400/5733FF/ffffff?text=Imagem+3" class="card-img-top w-full h-48 object-cover" alt="Imagem do Card 3">
+                        <div class="card-body">
+                            <h5 class="card-title text-xl font-semibold mb-2">Título do Card Três</h5>
+                            <p class="card-text text-gray-700">Este card demonstra uma imagem no topo e conteúdo de corpo padrão.</p>
+                            <a href="#" class="btn btn-warning bg-yellow-500 hover:bg-yellow-600 border-none rounded-md px-4 py-2">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botões -->
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">2.2 Botões</h3>
+            <div class="flex flex-wrap gap-3 mb-8 items-center">
+                <button type="button" class="btn btn-primary rounded-lg px-4 py-2 shadow-md">Primário</button>
+                <button type="button" class="btn btn-secondary rounded-lg px-4 py-2 shadow-md">Secundário</button>
+                <button type="button" class="btn btn-success rounded-lg px-4 py-2 shadow-md">Sucesso</button>
+                <button type="button" class="btn btn-danger rounded-lg px-4 py-2 shadow-md">Perigo</button>
+                <button type="button" class="btn btn-warning rounded-lg px-4 py-2 shadow-md">Aviso</button>
+                <button type="button" class="btn btn-info rounded-lg px-4 py-2 shadow-md">Info</button>
+                <button type="button" class="btn btn-light rounded-lg px-4 py-2 shadow-md">Claro</button>
+                <button type="button" class="btn btn-dark rounded-lg px-4 py-2 shadow-md">Escuro</button>
+                <button type="button" class="btn btn-link rounded-lg px-4 py-2">Link</button>
+                <button type="button" class="btn btn-outline-primary rounded-lg px-4 py-2">Contorno Primário</button>
+                <button type="button" class="btn btn-custom rounded-lg px-4 py-2">Gradiente Personalizado</button>
+            </div>
+
+            <!-- Alertas -->
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">2.3 Alertas</h3>
+            <div class="mb-8 space-y-3">
+                <div class="alert alert-primary rounded-lg p-3" role="alert">
+                    Um alerta primário simples—confira!
+                </div>
+                <div class="alert alert-secondary rounded-lg p-3" role="alert">
+                    Um alerta secundário simples—confira!
+                </div>
+                <div class="alert alert-success rounded-lg p-3" role="alert">
+                    Um alerta de sucesso simples—confira!
+                </div>
+                <div class="alert alert-danger rounded-lg p-3" role="alert">
+                    Um alerta de perigo simples—confira!
+                </div>
+                <div class="alert alert-warning rounded-lg p-3" role="alert">
+                    Um alerta de aviso simples—confira!
+                </div>
+                <div class="alert alert-info rounded-lg p-3" role="alert">
+                    Um alerta de informação simples—confira!
+                </div>
+            </div>
+
+            <!-- Modais -->
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">2.4 Modais</h3>
+            <button type="button" class="btn btn-primary rounded-lg px-4 py-2 shadow-md" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Lançar modal de demonstração
+            </button>
+
+            <!-- Estrutura do Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog rounded-lg">
+                    <div class="modal-content rounded-lg shadow-lg">
+                        <div class="modal-header border-b border-gray-200">
+                            <h5 class="modal-title text-xl font-semibold" id="exampleModalLabel">Título do modal</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-gray-700">
+                            Este é um exemplo de conteúdo de modal. Você pode colocar qualquer conteúdo HTML aqui, como formulários, imagens ou texto.
+                        </div>
+                        <div class="modal-footer border-t border-gray-200">
+                            <button type="button" class="btn btn-secondary rounded-lg px-4 py-2" data-bs-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-primary rounded-lg px-4 py-2">Salvar alterações</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Formulários -->
+        <section id="forms" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-3xl section-header mb-8">3. Formulários</h2>
+            <form>
+                <div class="mb-4">
+                    <label for="exampleInputEmail1" class="form-label text-gray-700 font-medium">Endereço de email</label>
+                    <input type="email" class="form-control rounded-md p-2 border border-gray-300 focus:ring focus:ring-blue-200" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text text-sm text-gray-500 mt-1">Nós nunca compartilharemos seu email com ninguém.</div>
+                </div>
+                <div class="mb-4">
+                    <label for="exampleInputPassword1" class="form-label text-gray-700 font-medium">Senha</label>
+                    <input type="password" class="form-control rounded-md p-2 border border-gray-300 focus:ring focus:ring-blue-200" id="exampleInputPassword1">
+                </div>
+                <div class="mb-4 form-check">
+                    <input type="checkbox" class="form-check-input rounded-sm" id="exampleCheck1">
+                    <label class="form-check-label text-gray-700" for="exampleCheck1">Me marque</label>
+                </div>
+                <div class="mb-4">
+                    <label for="formControlTextarea1" class="form-label text-gray-700 font-medium">Exemplo de área de texto</label>
+                    <textarea class="form-control rounded-md p-2 border border-gray-300 focus:ring focus:ring-blue-200" id="formControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="formFile" class="form-label text-gray-700 font-medium">Exemplo de entrada de arquivo padrão</label>
+                    <input class="form-control rounded-md p-2 border border-gray-300 focus:ring focus:ring-blue-200" type="file" id="formFile">
+                </div>
+                <div class="mb-4">
+                    <label for="formSelect" class="form-label text-gray-700 font-medium">Opção de seleção</label>
+                    <select class="form-select rounded-md p-2 border border-gray-300 focus:ring focus:ring-blue-200" aria-label="Default select example" id="formSelect">
+                        <option selected>Abra este menu de seleção</option>
+                        <option value="1">Um</option>
+                        <option value="2">Dois</option>
+                        <option value="3">Três</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary rounded-lg px-4 py-2 shadow-md">Enviar</button>
+            </form>
+        </section>
+
+        <!-- Seção de Utilitários -->
+        <section id="utilities" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-3xl section-header mb-8">4. Classes Utilitárias</h2>
+
+            <!-- Tipografia -->
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">4.1 Tipografia</h3>
+            <p class="h1 text-blue-700 mb-2">h1. Título Bootstrap</p>
+            <p class="h2 text-green-700 mb-2">h2. Título Bootstrap</p>
+            <p class="h3 text-purple-700 mb-2">h3. Título Bootstrap</p>
+            <p class="lead text-lg text-gray-700 mb-2">Este é um parágrafo de destaque, indicando um elemento de texto mais proeminente.</p>
+            <p class="text-muted text-gray-500 mb-2">Este texto está silenciado.</p>
+            <p class="font-bold mb-2">Este texto está em negrito usando o font-bold do Tailwind.</p>
+            <p class="text-decoration-underline mb-8">Este texto está sublinhado.</p>
+
+            <!-- Espaçamento (Margem e Preenchimento) -->
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">4.2 Espaçamento</h3>
+            <div class="bg-blue-100 p-4 mb-4 rounded-md">
+                <div class="bg-blue-300 p-2 m-4 rounded-md">
+                    <p class="text-blue-900">Esta div tem margem `m-4` do Tailwind.</p>
+                </div>
+            </div>
+            <div class="bg-green-100 p-4 mb-8 rounded-md">
+                <div class="bg-green-300 py-3 px-5 rounded-md">
+                    <p class="text-green-900">Esta div tem preenchimento `py-3 px-5` do Tailwind.</p>
+                </div>
+            </div>
+
+            <!-- Cores -->
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">4.3 Cores</h3>
+            <div class="flex flex-wrap gap-4 mb-8">
+                <div class="p-4 rounded-md text-white bg-primary shadow-md">Cor Primária</div>
+                <div class="p-4 rounded-md text-white bg-secondary shadow-md">Cor Secundária</div>
+                <div class="p-4 rounded-md text-white bg-success shadow-md">Cor de Sucesso</div>
+                <div class="p-4 rounded-md text-white bg-danger shadow-md">Cor de Perigo</div>
+                <div class="p-4 rounded-md text-dark bg-warning shadow-md">Cor de Aviso</div>
+                <div class="p-4 rounded-md text-white bg-info shadow-md">Cor de Informação</div>
+                <div class="p-4 rounded-md text-dark bg-light shadow-md border">Cor Clara</div>
+                <div class="p-4 rounded-md text-white bg-dark shadow-md">Cor Escura</div>
+                <div class="p-4 rounded-md text-white bg-gradient-to-r from-pink-500 to-red-500 shadow-md">Gradiente Personalizado</div>
+            </div>
+
+            <!-- Sombras -->
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">4.4 Sombras</h3>
+            <div class="flex flex-wrap gap-6 mb-8">
+                <div class="p-6 bg-white rounded-lg shadow-sm">Sombra Pequena</div>
+                <div class="p-6 bg-white rounded-lg shadow-md">Sombra Média</div>
+                <div class="p-6 bg-white rounded-lg shadow-lg">Sombra Grande</div>
+                <div class="p-6 bg-white rounded-lg shadow-xl">Sombra Extra Grande</div>
+                <div class="p-6 bg-white rounded-lg shadow-2xl">Sombra 2XL</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-white text-center py-8 mt-12 rounded-t-lg shadow-inner">
+        <p class="text-sm">&copy; 2024 Mostruário Bootstrap. Todos os direitos reservados.</p>
+        <p class="text-xs opacity-75 mt-2">Construído com Bootstrap e Tailwind CSS</p>
+    </footer>
+
+    <!-- Pacote JavaScript do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
 ```
 
 </details>
