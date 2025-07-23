@@ -1002,6 +1002,7 @@ Você pode usar F12 ou clicar com o botão direito e inspecionar para ver o cód
     Template Bootstrap renderizado
   </summary>
 
+{% raw %}
 ```
 <html lang="pt-br">
 <head>
@@ -1333,6 +1334,7 @@ Você pode usar F12 ou clicar com o botão direito e inspecionar para ver o cód
 </body>
 </html>
 ```
+{% endraw %}
 
 </details>
 
