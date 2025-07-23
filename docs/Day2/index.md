@@ -53,8 +53,8 @@ Uma **estrutura de arquivos** (também conhecida como **estrutura de diretórios
 Um caminho de arquivo é o endereço para um arquivo ou pasta no computador. Existem dois tipos:
 1. Caminho Absoluto que aponta para a localização exata a partir da raiz e sempre começa da unidade ou diretório raiz.
 ```python
-"C:/Users/Alberto/Desktop/meu_arquivo.txt" # Windows
-"/home/alberto/documents/meu_arquivo.txt" # Linux/macOS
+"C:/Users/structuralwizard/Desktop/meu_arquivo.txt" # Windows
+"/home/structuralwizard/documents/meu_arquivo.txt" # Linux/macOS
 ```
 1. Caminho Relativo que aponta para uma localização relativa ao diretório de trabalho atual.
 ```python

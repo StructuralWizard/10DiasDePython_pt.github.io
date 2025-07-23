@@ -477,7 +477,7 @@ api_key = os.getenv("API_KEY")
 ```
 
 {: .warning}
-> NUNCA codifique segredos. Se você cometer um segredo no GitHub:
+> NUNCA escreva segredos diretamente no seu código. Se você cometer um segredo no GitHub:
 > 🔓 Qualquer um pode vê-lo,
 > 🤖 Bots escaneiam constantemente repositórios públicos em busca de segredos,
 > 💣 Provedores de API podem revogar ou abusar das chaves e
